@@ -1,0 +1,21 @@
+# === Node & package managers ===
+node_modules/
+.pnpm/
+.pnpm-workspace-state-v1.json
+pnpm-lock.yaml
+
+# === Build / Output ===
+dist/
+output/
+output.css
+
+# === System / Editor ===
+.vscode/
+.DS_Store
+Thumbs.db
+
+# === Environment / Private ===
+.env
+
+# === Misc ===
+*.log

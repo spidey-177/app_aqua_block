@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario Multipaso con Confirmación</title>
+  <link rel="stylesheet" href="../dist/output.css">
+  <script src="https://kit.fontawesome.com/0098432d55.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<form id="multiStepForm" class="overflow-hidden 
+bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w-full  ">
+  <!-- Pantalla 1: Inicio   flex falta aqui-->
+  <section id="pantalla-inicio" class="pantalla 
+  active w-full h-full  hidden flex-col items-center  bg-gray-100
+  overflow-hidden  shadow-lg rounded-2xl mb-10  max-w-5xl mx-auto
+  animate-fade-in-down 
+  gap-4 relative">
+    <div class="text-center flex flex-col items-center justify-center gap-6 mt-20 p-4 animate-slide-in-left">
+      <h1 class="text-4xl ">Bienvenidos</h1>
+      <p class="">Envía fácilmente las medidas y fotos de tus puertas o puertas de garaje.</p>
+      <p class="text-gray-500 text-sm">Nuestro equipo se pondrá en contacto contigo ^_~.</p>
+      <a href="#pantalla-form" class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+      </a>
+      <small class="text-gray-400">© 2025 Aqua Block. Todos los derechos reservados.</small>
+
+    </div>
+    <img src="assets/logo4.png" alt="logo"
+    style="animation-delay: 200ms; animation-duration: 700ms;"
+    class="absolute -bottom-30 -right-10 size-90 max-w-2xl opacity-90 animate-jiggle"
+    >
+    
+  </section>
+
+  <!-- Pantalla 2: Formulario-usuario poner flex-->
+  <section id="pantalla-form" class="pantalla
+  w-full h-full hidden flex-col justify-around items-center
+  overflow-hidden shadow-lg rounded-2xl animate-fade-in
+  gap-4 relative bg-gray-50 max-w-5xl mx-auto 
+  ">
+    <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full text-center p-1 flex  items-center justify-center relative">
+      <a href="#pantalla-inicio" class="fa-solid fa-arrow-left  p-3 rounded-lg
+      flex-1
+      "></a>
+      <div class="flex flex-col items-center justify-center flex-10">
+        <h2 class="text-2xl">Aqua Block!</h2>
+        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-red-700 to-transparent mx-auto"></div>
+      </div>
+    </div>
+    <div class="flex-10  w-full p-2 rounded-lg border-b-2 border-gray-300">
+      <div class="flex justify-between gap-4">
+        <div>
+          <p class="text-gray-400">Añade tus datos para continuar</p>
+        </div>
+        <!-- --hacer validacion de datos-- -->
+          <a href="#pantalla-selection-typeform"class="btn_red max-w-2xs">Continuar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+        </a>
+      </div>
+      <div class="flex flex-col gap-4 mt-4 p-4  rounded-lg shadow-inner">
+        <div>
+          <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="ej. Juan Pérez"
+                 class="input_style" required>
+        </div>
+        <div>
+          <label for="correo" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="correo" name="correo" placeholder="ej. juan.perez@example.com"
+                 class="input_style" required>
+        </div>
+        <div>
+          <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="ej. 123-456-7890"
+                 class="input_style" required>
+        </div>
+        <div>
+          <label for="direccion" class="block text-sm font-medium text-gray-700">Dirección</label>
+          <input type="text" id="direccion" name="direccion" placeholder="ej. Calle Falsa 123"
+                 class="input_style" required>
+        </div>
+        <div class="flex gap-2 justify-between">
+           <div>
+              <label for="poblacion" class="block text-sm font-medium text-gray-700">Población</label>
+              <input type="text" id="poblacion" name="poblacion" placeholder="ej. Madrid"
+                    class="input_style" required>
+            </div>
+            <div>
+              <label for="codigo_postal" class="block text-sm font-medium text-gray-700">Código Postal</label>
+              <input type="text" id="codigo_postal" name="codigo_postal" placeholder="ej. 28001"
+                    class="input_style" required>
+            </div>   
+        </div>
+       
+      </div>
+    </div>
+    <footer class="flex-1 p-1">
+      <small class="text-gray-400">© 2025 Aqua Block. Todos los derechos reservados.</small>
+
+    </footer>
+  </section>
+
+   <!-- Pantalla 3: Seleccion-tipo-puertas flex!-->
+  <section id="pantalla-selection-typeform" class="pantalla
+  w-full h-full hidden flex-col justify-around items-center
+  overflow-hidden shadow-lg rounded-2xl animate-fade-in
+  gap-4 relative bg-gray-50 max-w-5xl mx-auto
+  ">
+    <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full text-center p-1 flex  items-center justify-center relative">
+      <a href="#pantalla-form" class="fa-solid fa-arrow-left  p-3 rounded-lg
+      flex-1
+      "></a>
+      <div class="flex flex-col items-center justify-center flex-10">
+        <h2 class="text-2xl">Aqua Block!</h2>
+        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-red-700 to-transparent mx-auto"></div>
+      </div>
+    </div>
+    <div class="flex-10 flex flex-col justify-around  w-full p-2  border-b-2 border-gray-300 max-w-2xl"
+    id=""
+    >
+      <div class="flex flex-col justify-between gap-2">
+        <p>Tipo de puertas</p>
+          <p class="text-gray-400">Selecciona un tipo de puerta</p>
+      </div>
+      <div class="flex flex-col justify-evenly gap-4 mt-4 p-4  rounded-lg shadow-inner w-full h-full bg-gray-50">
+        <a href="#pantalla-form-doors" class="flex-1 flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer
+          hover:border-1 hover:border-red-700 transition group 
+        shadow-lg
+        ">
+          <div class="flex gap-6 items-center">
+            <i class="fa-solid fa-door-open bg-gray-200 group-hover:bg-red-700 group-hover:text-white
+            p-4 rounded-lg shadow-lg group-hover:scale-110  transition
+            "></i>
+            <div>
+              <h3>Puertas</h3>
+              <p class="text-gray-400">Selecciona un tipo de puerta</p>
+            </div>
+          </div>
+          <i class="fa-solid pt-1 fa-arrow-right-long
+          group-hover:text-red-700 transition group-hover:scale-125
+          "></i>
+        </a>
+        <a href="#pantalla-form-garages" class="flex-1 flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer
+          hover:border-1 hover:border-red-700 transition group 
+        shadow-lg"> 
+          <div class="flex gap-6 items-center">
+            <i class="fa-solid fa-warehouse bg-gray-200 group-hover:bg-red-700 group-hover:text-white
+            p-4 rounded-lg shadow-lg group-hover:scale-110  transition
+            "></i>
+            <div>
+              <h3>Puertas de garajes</h3>
+              <p class="text-gray-400">Selecciona un tipo de puerta de garaje</p>
+            </div>
+           </div>
+            
+          <i class="fa-solid pt-1 fa-arrow-right-long
+          group-hover:text-red-700 transition group-hover:scale-125
+          "></i>
+        </a>
+        
+        <a href="#pantalla-form-windows" class="flex-1 flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer
+          hover:border-1 hover:border-red-700 transition group 
+        shadow-lg">
+          <div class="flex gap-6 items-center">
+            <i class="fa-regular fa-window-maximize bg-gray-200 group-hover:bg-red-700 group-hover:text-white
+            p-4 rounded-lg shadow-lg group-hover:scale-110  transition
+            "></i>
+            <div>
+              <h3>Ventanas</h3>
+              <p class="text-gray-400">Selecciona un tipo de ventana</p>
+            </div>
+          </div>
+          <i class="fa-solid pt-1 fa-arrow-right-long
+           group-hover:text-red-700 transition group-hover:scale-125"></i>
+        </a>
+      </div>
+    </div>
+    <footer class="flex-1  items-center">
+      <small class="text-gray-400">© 2025 Aqua Block. Todos los derechos reservados.</small>
+
+    </footer>
+  </section>
+
+
+   <!-- Pantalla 4: Formulario-puertas -->
+  <section id="pantalla-form-doors" class="pantalla
+ w-full h-full flex flex-col justify-around items-center
+  overflow-hidden shadow-lg rounded-2xl animate-fade-in-right
+  gap-4 relative bg-gray-50 max-w-5xl mx-auto
+  ">
+    <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full  p-2.5 flex  items-center justify-center relative">
+      <a href="#pantalla-selection-typeform" class="fa-solid fa-arrow-left  p-3 rounded-lg
+      flex-1
+      "></a>
+      <div class="flex flex-col items-start justify-start flex-10">
+        <h2 >Puertas Normales</h2>
+        <p class="text-gray-400">Danos las medidas! (┬┬﹏┬┬)</p>
+      </div>
+    </div>
+    <div class="flex-10 flex flex-col justify-around  w-full p-4  border-b-2 border-gray-300 max-w-2xl  overflow-y-auto "
+    id="" 
+    >
+      <div class="flex flex-col justify-evenly gap-4 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md">
+        <div class="flex gap-4 items-center">
+          <div class="bg-red-700 text-white px-2.5 py-1 rounded-lg shadow-md" id="num_puertas">1</div>
+          <h3>Puerta 1</h3>
+        </div>
+        <div class="flex gap-2 justify-between items-center">
+          <div class="flex flex-col ">
+            <label for="puerta-ancho" class="text-gray-600">Ancho (cm)</label>
+            <input type="number" id="puerta-ancho" class="border border-gray-300 bg-gray-100 p-2 rounded-lg  w-full" placeholder="80cm">
+          </div>
+
+          <div class="flex flex-col">
+            <label for="puerta-alto" class="text-gray-600">Alto (cm)</label>
+            <input type="number" id="puerta-alto" class="border border-gray-300 bg-gray-100 p-2 rounded-lg  w-full" placeholder="200cm">
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <label for="puerta-material" class="text-gray-600">Tipo de Puerta</label>
+          <select id="puerta-material" class="border bg-gray-100 border-gray-300 p-2 rounded-lg text-gray-400">
+            <option value="">Selecciona un tipo </option>
+            <option value="madera">Madera</option>
+            <option value="metal">Metal</option>
+            <option value="vidrio">Vidrio</option>
+          </select>
+        </div>
+         <div class="flex flex-col">
+          <label for="observaciones" class="text-gray-600">Observaciones</label>
+          <textarea id="observaciones" class="border border-gray-300 bg-gray-100 p-2 rounded-lg" placeholder="Detalles adicionales"></textarea>
+        </div>
+         <div class="flex flex-col">
+          <h3>Fotos</h3>
+          <label for="fotos" class="text-gray-600 w-full bg-gray-100 py-5 px-4
+          border-dashed border-2 border-gray-300 rounded-lg text-center cursor-pointer hover:border-red-700 hover:text-red-700
+          "><i class="fa-solid fa-upload"></i> Subir fotos (minimo 2)</label>
+         <input type="file" accept="image/*"  id="fotos" capture="environment" class="border border-gray-300 bg-gray-100 p-2 rounded-lg" multiple hidden>
+        </div>
+
+      </div>
+
+      <div id="nueva_puerta" class="flex items-center justify-center gap-2 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md cursor-pointer
+     text-gray-400 hover:bg-gray-100 transition border-dashed border-2 border-gray-300 hover:border-red-700 hover:text-red-700">
+        <p><i class="fa-solid fa-plus"></i> Añadir nueva puerta</p>
+      </div>
+    </div>
+    <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
+       <a href="#pantalla-form" class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+      </a>
+    </div>
+
+
+
+  </section>
+  
+
+  <!-- Pantalla 4: Confirmación -->
+  <!-- <section id="pantalla-confirm" class="pantalla">
+    <h2>¡Gracias!</h2>
+    <p>Tus datos se han enviado correctamente.</p>
+    <button id="btn-volver">Volver al inicio</button>
+  </section> -->
+</form>
+<script src="../src/js/main.js"></script>
+<!-- <script> -->
+
+
+
+<!-- // let div_anotaciones = document.querySelector('.anotaciones')
+// let btn_notas = document.querySelectorAll('.notas-btn')
+// let submit_notas = document.querySelector('#notas-submit')
+// let cancel_notas = document.querySelector('#notas-cancel')
+// let content_notas = document.querySelector('#anotaciones_generales')
+// let notas = document.querySelector('#datos')
+// let indice_notas= null
+
+
+// btn_notas.forEach((btn_notas,i) =>{
+//   btn_notas.addEventListener('click',()=>{
+//     div_anotaciones.classList.remove("hidden");
+//     div_anotaciones.classList.add("flex");
+//     indice_notas=i;
+//      notas.placeholder= "Notas para: "+btn_notas.title
+//       btn_notas.classList.add("text-green-500");
+//        btn_notas.classList.remove("border-green-500");
+//       btn_notas.classList.remove("border-white");
+//       btn_notas.classList.remove("text-white");
+
+//   })
+
+
+// })
+
+// // envia las notas al notas container
+// submit_notas.addEventListener('click',()=>{
+//   escribir(indice_notas)
+ 
+// })
+
+// cancel_notas.addEventListener('click', () => {
+//   div_anotaciones.classList.add("hidden");
+//      div_anotaciones.classList.remove("flex");
+// })
+
+// function escribir(indice) {
+ 
+//  content_notas.value += btn_notas[indice].title+": "+notas.value+"\n";
+//  notas.value="";
+//  div_anotaciones.classList.add("hidden");
+//   div_anotaciones.classList.remove("flex");
+  
+// }
+
+
+  // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  //   anchor.addEventListener("click", function(e) {
+  //     e.preventDefault();
+  //     let target = document.querySelector(this.getAttribute("href"));
+      
+  //     if (target) {
+  //       let startPosition = window.scrollY;
+  //       let targetPosition = target.offsetTop - 50; // Ajusta según el tamaño del navbar
+  //       let distance = targetPosition - startPosition;
+  //       let duration = 800; // Duración de la animación en milisegundos
+  //       let startTime = null;
+  
+  //       function animationScroll(currentTime) {
+  //         if (!startTime) startTime = currentTime;
+  //         let timeElapsed = currentTime - startTime;
+  //         let progress = Math.min(timeElapsed / duration, 1); // Asegura que no pase del 100%
+  
+  //         // Efecto de easing para una transición suave (usamos easeInOutQuad)
+  //         let easedProgress = progress < 0.5 
+  //           ? 2 * progress * progress 
+  //           : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+  
+  //         window.scrollTo(0, startPosition + distance * easedProgress);
+  
+  //         if (timeElapsed < duration) {
+  //           requestAnimationFrame(animationScroll);
+  //         }
+  //       }
+  
+  //       requestAnimationFrame(animationScroll);
+  //     }
+  //   });
+  // });
+
+  // const exit = document.querySelector('.fa-times');
+  // const phone_menu = document.querySelector('.navbar-phone');
+
+  // exit.addEventListener('click',function () {
+    
+  //   phone_menu.style.left='-120px';
+  
+  // })
+
+  
+   -->
+
+<!-- </script> -->
+
+</body>
+</html>
