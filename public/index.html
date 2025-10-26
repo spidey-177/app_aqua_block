@@ -36,7 +36,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
 
   <!-- Pantalla 2: Formulario-usuario poner flex-->
   <section id="pantalla-form" class="pantalla
-  w-full h-full hidden flex-col justify-around items-center
+  w-full h-full flex flex-col justify-around items-center
   overflow-hidden shadow-lg rounded-2xl animate-fade-in
   gap-4 relative bg-gray-50 max-w-5xl mx-auto 
   ">
@@ -55,43 +55,99 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
           <p class="text-gray-400">Añade tus datos para continuar</p>
         </div>
         <!-- --hacer validacion de datos-- -->
-          <a href="#pantalla-selection-typeform"class="btn_red max-w-2xs">Continuar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+          <a href="#pantalla-selection-typeform"class="btn_red max-w-2xs" id="form_usuario">Continuar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
         </a>
       </div>
       <div class="flex flex-col gap-4 mt-4 p-4  rounded-lg shadow-inner">
         <div>
           <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="ej. Juan Pérez"
-                 class="input_style" required>
+          <input 
+            type="text" 
+            id="nombre" 
+            name="nombre" 
+            placeholder="ej. Juan Pérez"
+            class="input_style" 
+            required 
+            minlength="2" 
+            maxlength="50"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
+            title="Solo letras y espacios"
+          >
         </div>
+
         <div>
           <label for="correo" class="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" id="correo" name="correo" placeholder="ej. juan.perez@example.com"
-                 class="input_style" required>
+          <input 
+            type="email" 
+            id="correo" 
+            name="correo" 
+            placeholder="ej. juan.perez@example.com"
+            class="input_style" 
+            required
+          >
         </div>
+
         <div>
           <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="ej. 123-456-7890"
-                 class="input_style" required>
+          <input 
+            type="tel" 
+            id="telefono" 
+            name="telefono" 
+            placeholder="ej. 612345678"
+            class="input_style" 
+            required 
+            pattern="[0-9]{9}" 
+            title="Debe tener 9 dígitos numéricos"
+          >
         </div>
+
         <div>
           <label for="direccion" class="block text-sm font-medium text-gray-700">Dirección</label>
-          <input type="text" id="direccion" name="direccion" placeholder="ej. Calle Falsa 123"
-                 class="input_style" required>
+          <input 
+            type="text" 
+            id="direccion" 
+            name="direccion" 
+            placeholder="ej. Calle Falsa 123"
+            class="input_style" 
+            required 
+            minlength="5" 
+            maxlength="100"
+          >
         </div>
+
         <div class="flex gap-2 justify-between">
-           <div>
-              <label for="poblacion" class="block text-sm font-medium text-gray-700">Población</label>
-              <input type="text" id="poblacion" name="poblacion" placeholder="ej. Madrid"
-                    class="input_style" required>
-            </div>
-            <div>
-              <label for="codigo_postal" class="block text-sm font-medium text-gray-700">Código Postal</label>
-              <input type="text" id="codigo_postal" name="codigo_postal" placeholder="ej. 28001"
-                    class="input_style" required>
-            </div>   
+          <div>
+            <label for="poblacion" class="block text-sm font-medium text-gray-700">Población</label>
+            <input 
+              type="text" 
+              id="poblacion" 
+              name="poblacion" 
+              placeholder="ej. Madrid"
+              class="input_style" 
+              required 
+              minlength="2" 
+              maxlength="50"
+              pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
+              title="Solo letras y espacios"
+            >
+          </div>
+
+          <div>
+            <label for="codigo_postal" class="block text-sm font-medium text-gray-700">Código Postal</label>
+            <input 
+              type="text" 
+              id="codigo_postal" 
+              name="codigo_postal" 
+              placeholder="ej. 28001"
+              class="input_style" 
+              required 
+              pattern="[0-9]{5}" 
+              title="Debe tener 5 dígitos numéricos"
+              inputmode="numeric"
+            >
+          </div>   
         </div>
-       
+            
       </div>
     </div>
     <footer class="flex-1 p-1">
@@ -184,14 +240,14 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
 
    <!-- Pantalla 4: Formulario-puertas -->
   <section id="pantalla-form-doors" class="pantalla
- w-full h-full flex flex-col justify-around items-center
+ w-full h-full hidden flex-col justify-around items-center
   overflow-hidden shadow-lg rounded-2xl animate-fade-in-right
   gap-4 relative bg-gray-50 max-w-5xl mx-auto
   ">
     <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full  p-2.5 flex  items-center justify-center relative">
       <a href="#pantalla-selection-typeform" class="fa-solid fa-arrow-left  p-3 rounded-lg
       flex-1
-      "></a>
+      " ></a>
       <div class="flex flex-col items-start justify-start flex-10">
         <h2 >Puertas Normales</h2>
         <p class="text-gray-400">Danos las medidas! (┬┬﹏┬┬)</p>
@@ -208,7 +264,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
         <div class="flex gap-2 justify-between items-center">
           <div class="flex flex-col ">
             <label for="puerta-ancho" class="text-gray-600">Ancho (cm)</label>
-            <input type="number" id="puerta-ancho" class="border border-gray-300 bg-gray-100 p-2 rounded-lg  w-full" placeholder="80cm">
+            <input type="number" id="puerta-ancho" class="border border-gray-300 bg-gray-100 p-2 rounded-lg  w-full" placeholder="80cm" required>
           </div>
 
           <div class="flex flex-col">
@@ -245,7 +301,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
       </div>
     </div>
     <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
-       <a href="#pantalla-form" class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+       <a href="#pantalla-form" class="btn_red" id="form_doors">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
       </a>
     </div>
 

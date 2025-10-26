@@ -9,35 +9,25 @@ links.forEach((enlaces)=>{
     // da error por focus asi xd lo quito 
     document.activeElement.blur();
 
-
     let destino = document.querySelector(enlaces.getAttribute('href'))
-    let hr = enlaces.getAttribute('href')
-    let valid = true
-
+    let is_form = enlaces.id.startsWith('form')
+    let valido = true
+    let pantalla_actual = enlaces.closest('.pantalla') //scala hasta el padre
+   
+    
     // pantallas.forEach(pant=>{
     //    pant.classList.remove('flex')
     //   pant.classList.add('hidden')
     // })
-
     // destino.classList.add('flex')
     // destino.classList.remove('hidden')
-
    
-    
-
-    if (hr==='#pantalla-election-typeform') {
-      const inpunt_requireds = document.querySelectorAll('#pantalla-form input[required]')
-
-      inpunt_requireds.forEach(inputs_r=>{
-      if (!inputs_r.checkValidity()) {
-          inputs_r.reportValidity();
-          valid=false }
-
-      })
-      if (!valid) {
-        return
-      }
-    
+    if (is_form) {
+      const esValido= revisarForm(pantalla_actual,valido)
+      // el return de por si se sale de la funcion mas cercana
+      //da impresion de bucle pero no simplemente se sale y sigue
+      // si en caso esto no se cumple
+      if (!esValido) {return}
       
     }
  
@@ -48,63 +38,44 @@ links.forEach((enlaces)=>{
 
 })
 
-function mostrarPantalla(window,destiny) {
 
-   window.forEach(pant=>{
-       pant.classList.remove('flex')
-      pant.classList.add('hidden')
-    })
+function revisarForm(pantalla,valid) {
 
-    destiny.classList.add('flex')
-    destiny.classList.remove('hidden')
+  const inpunt_requireds = pantalla.querySelectorAll('input[required]')
+
+  inpunt_requireds.forEach(inputs_r=>{
+  if (!inputs_r.checkValidity()) {
+      inputs_r.reportValidity();
+      valid=false }
+
+  })
+  return valid
+  
 }
 
 
+function mostrarPantalla(window,destiny) {
 
+  window.forEach(pant=>{
+      pant.classList.remove('flex')
+    pant.classList.add('hidden')
+  })
 
-// const steps = document.querySelectorAll(".step");
-// let currentStep = 0;
+  destiny.classList.add('flex')
+  destiny.classList.remove('hidden')
+}
 
-// document.getElementById("next1").addEventListener("click", () => {
-//   const current = steps[currentStep];
-//   const inputs = current.querySelectorAll("input[required]");
+// fase uno de la validacion form! 
+// const inpunt_requireds = pantalla_actual.querySelectorAll('input[required]')
+// inpunt_requireds.forEach(inputs_r=>{
+// if (!inputs_r.checkValidity()) {
+//     inputs_r.reportValidity();
+//     valid=false }
 
-//   // Usa la validación nativa del navegador
-//   let valid = true;
-//   inputs.forEach(input => {
-//     if (!input.checkValidity()) {
-//       input.reportValidity(); // muestra el mensaje nativo del navegador
-//       valid = false;
-//     }
-//   });
-
-//   if (valid) {
-//     // Ocultar paso actual
-//     current.classList.add("hidden");
-//     currentStep++;
-//     // Mostrar siguiente
-//     steps[currentStep].classList.remove("hidden");
-//   }
-// });
-
-
-
-
-// function mostrarPantalla(id) {
-//   pantallas.forEach(p => p.classList.remove('activa'));
-//   document.getElementById(id).classList.add('activa');
+// })
+// if (!valid) {
+//   return
 // }
 
-// document.getElementById('btn-empezar').addEventListener('click', () => {
-//   mostrarPantalla('pantalla-form');
-// });
-
-// document.getElementById('btn-enviar').addEventListener('click', () => {
-//   mostrarPantalla('pantalla-confirm');
-// });
-
-// document.getElementById('btn-volver').addEventListener('click', () => {
-//   mostrarPantalla('pantalla-inicio');
-// });
-
+// -------------forms dinamicos---------
 
