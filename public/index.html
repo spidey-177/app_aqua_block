@@ -36,7 +36,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
 
   <!-- Pantalla 2: Formulario-usuario poner flex-->
   <section id="pantalla-form" class="pantalla
-  w-full h-full flex flex-col justify-around items-center
+  w-full h-full hidden flex-col justify-around items-center
   overflow-hidden shadow-lg rounded-2xl animate-fade-in
   gap-4 relative bg-gray-50 max-w-5xl mx-auto 
   ">
@@ -158,7 +158,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
 
    <!-- Pantalla 3: Seleccion-tipo-puertas flex!-->
   <section id="pantalla-selection-typeform" class="pantalla
-  w-full h-full hidden flex-col justify-around items-center
+  w-full h-full flex flex-col justify-around items-center
   overflow-hidden shadow-lg rounded-2xl animate-fade-in
   gap-4 relative bg-gray-50 max-w-5xl mx-auto
   ">
@@ -178,7 +178,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
         <p>Tipo de puertas</p>
           <p class="text-gray-400">Selecciona un tipo de puerta</p>
       </div>
-      <div class="flex flex-col justify-evenly gap-4 mt-4 p-4  rounded-lg shadow-inner w-full h-full bg-gray-50">
+      <div class="flex flex-col justify-evenly gap-4 mt-4 p-4  rounded-lg  w-full h-full bg-gray-50">
         <a href="#pantalla-form-doors" class="flex-1 flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer
           hover:border-1 hover:border-red-700 transition group 
         shadow-lg
@@ -231,10 +231,9 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
         </a>
       </div>
     </div>
-    <footer class="flex-1  items-center">
-      <small class="text-gray-400">© 2025 Aqua Block. Todos los derechos reservados.</small>
-
-    </footer>
+    <button type="submit" id="submit-btn"
+    class="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full mb-4 cursor-pointer"
+    >Enviar</button>
   </section>
 
 
@@ -253,168 +252,99 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
         <p class="text-gray-400">Danos las medidas! (┬┬﹏┬┬)</p>
       </div>
     </div>
-    <div class="flex-10 flex flex-col justify-around  w-full p-4  border-b-2 border-gray-300 max-w-2xl  overflow-y-auto "
-    id="" 
-    >
-      <div class="flex flex-col justify-evenly gap-4 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md">
-        <div class="flex gap-4 items-center">
-          <div class="bg-red-700 text-white px-2.5 py-1 rounded-lg shadow-md" id="num_puertas">1</div>
-          <h3>Puerta 1</h3>
-        </div>
-        <div class="flex gap-2 justify-between items-center">
-          <div class="flex flex-col ">
-            <label for="puerta-ancho" class="text-gray-600">Ancho (cm)</label>
-            <input type="number" id="puerta-ancho" class="border border-gray-300 bg-gray-100 p-2 rounded-lg  w-full" placeholder="80cm" required>
-          </div>
+    <div class="container-form flex-10 flex flex-col justify-around  w-full p-4  border-b-2 border-gray-300 max-w-2xl  overflow-y-auto "
+    id="puertas_container">
+      <!-- Contenido dinámico de puertas -->
 
-          <div class="flex flex-col">
-            <label for="puerta-alto" class="text-gray-600">Alto (cm)</label>
-            <input type="number" id="puerta-alto" class="border border-gray-300 bg-gray-100 p-2 rounded-lg  w-full" placeholder="200cm">
-          </div>
-        </div>
-        <div class="flex flex-col">
-          <label for="puerta-material" class="text-gray-600">Tipo de Puerta</label>
-          <select id="puerta-material" class="border bg-gray-100 border-gray-300 p-2 rounded-lg text-gray-400">
-            <option value="">Selecciona un tipo </option>
-            <option value="madera">Madera</option>
-            <option value="metal">Metal</option>
-            <option value="vidrio">Vidrio</option>
-          </select>
-        </div>
-         <div class="flex flex-col">
-          <label for="observaciones" class="text-gray-600">Observaciones</label>
-          <textarea id="observaciones" class="border border-gray-300 bg-gray-100 p-2 rounded-lg" placeholder="Detalles adicionales"></textarea>
-        </div>
-         <div class="flex flex-col">
-          <h3>Fotos</h3>
-          <label for="fotos" class="text-gray-600 w-full bg-gray-100 py-5 px-4
-          border-dashed border-2 border-gray-300 rounded-lg text-center cursor-pointer hover:border-red-700 hover:text-red-700
-          "><i class="fa-solid fa-upload"></i> Subir fotos (minimo 2)</label>
-         <input type="file" accept="image/*"  id="fotos" capture="environment" class="border border-gray-300 bg-gray-100 p-2 rounded-lg" multiple hidden>
-        </div>
-
-      </div>
-
-      <div id="nueva_puerta" class="flex items-center justify-center gap-2 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md cursor-pointer
+      <div id="puerta_nueva" class="crear flex items-center justify-center gap-2 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md cursor-pointer
      text-gray-400 hover:bg-gray-100 transition border-dashed border-2 border-gray-300 hover:border-red-700 hover:text-red-700">
         <p><i class="fa-solid fa-plus"></i> Añadir nueva puerta</p>
       </div>
     </div>
     <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
-       <a href="#pantalla-form" class="btn_red" id="form_doors">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+       <a href="#pantalla-selection-typeform" id="form_puertas" class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
       </a>
     </div>
 
 
 
   </section>
+
+  <!-- Pantalla 5: Formulario-puertas garage -->
+  <section id="pantalla-form-garages" class="pantalla
+ w-full h-full hidden flex-col justify-around items-center
+  overflow-hidden shadow-lg rounded-2xl animate-fade-in-right
+  gap-4 relative bg-gray-50 max-w-5xl mx-auto
+  ">
+    <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full  p-2.5 flex  items-center justify-center relative">
+      <a href="#pantalla-selection-typeform" class="fa-solid fa-arrow-left  p-3 rounded-lg
+      flex-1
+      " ></a>
+      <div class="flex flex-col items-start justify-start flex-10">
+        <h2 >Puertas Garage</h2>
+        <p class="text-gray-400">Necesitamos las medidas! ╰(*°▽°*)╯</p>
+      </div>
+    </div>
+    <div class="container-form flex-10 flex flex-col justify-around  w-full p-4  border-b-2 border-gray-300 max-w-2xl  overflow-y-auto "
+    id="garage_container">
+      <!-- Contenido dinámico de puertas de garaje -->
+
+      <div id="garages_nueva" class="crear flex items-center justify-center gap-2 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md cursor-pointer
+     text-gray-400 hover:bg-gray-100 transition border-dashed border-2 border-gray-300 hover:border-red-700 hover:text-red-700">
+        <p><i class="fa-solid fa-plus"></i> Añadir nueva puerta</p>
+      </div>
+    </div>
+    <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
+       <a href="#pantalla-selection-typeform" id="form-garages" class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+      </a>
+    </div>
+
+
+
+  </section>
+  <!-- Pantalla 6: Formulario-puertas windows -->
+  <section id="pantalla-form-windows" class="pantalla
+ w-full h-full hidden flex-col justify-around items-center
+  overflow-hidden shadow-lg rounded-2xl animate-fade-in-right
+  gap-4 relative bg-gray-50 max-w-5xl mx-auto
+  ">
+    <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full  p-2.5 flex  items-center justify-center relative">
+      <a href="#pantalla-selection-typeform" class="fa-solid fa-arrow-left  p-3 rounded-lg
+      flex-1
+      " ></a>
+      <div class="flex flex-col items-start justify-start flex-10">
+        <h2 >Ventanas</h2>
+        <p class="text-gray-400">Necesitamos las medidas! ╰(*°▽°*)╯</p>
+      </div>
+    </div>
+    <div class="container-form  flex-10 flex flex-col justify-around  w-full p-4  border-b-2 border-gray-300 max-w-2xl  overflow-y-auto "
+    id="windows_container">
+      <!-- campos dinamicos de las Ventanas -->
+
+      <div id="windows_nueva" class="crear flex items-center justify-center gap-2 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md cursor-pointer
+     text-gray-400 hover:bg-gray-100 transition border-dashed border-2 border-gray-300 hover:border-red-700 hover:text-red-700">
+        <p><i class="fa-solid fa-plus"></i> Añadir nueva ventana</p>
+      </div>
+    </div>
+    <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
+       <a href="#pantalla-selection-typeform" id="form-ventanas" class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+      </a>
+    </div>
+
+
+
+  </section>
+
   
 
-  <!-- Pantalla 4: Confirmación -->
+  <!-- Pantalla 7: Confirmación -->
   <!-- <section id="pantalla-confirm" class="pantalla">
     <h2>¡Gracias!</h2>
     <p>Tus datos se han enviado correctamente.</p>
     <button id="btn-volver">Volver al inicio</button>
   </section> -->
 </form>
-<script src="../src/js/main.js"></script>
-<!-- <script> -->
-
-
-
-<!-- // let div_anotaciones = document.querySelector('.anotaciones')
-// let btn_notas = document.querySelectorAll('.notas-btn')
-// let submit_notas = document.querySelector('#notas-submit')
-// let cancel_notas = document.querySelector('#notas-cancel')
-// let content_notas = document.querySelector('#anotaciones_generales')
-// let notas = document.querySelector('#datos')
-// let indice_notas= null
-
-
-// btn_notas.forEach((btn_notas,i) =>{
-//   btn_notas.addEventListener('click',()=>{
-//     div_anotaciones.classList.remove("hidden");
-//     div_anotaciones.classList.add("flex");
-//     indice_notas=i;
-//      notas.placeholder= "Notas para: "+btn_notas.title
-//       btn_notas.classList.add("text-green-500");
-//        btn_notas.classList.remove("border-green-500");
-//       btn_notas.classList.remove("border-white");
-//       btn_notas.classList.remove("text-white");
-
-//   })
-
-
-// })
-
-// // envia las notas al notas container
-// submit_notas.addEventListener('click',()=>{
-//   escribir(indice_notas)
- 
-// })
-
-// cancel_notas.addEventListener('click', () => {
-//   div_anotaciones.classList.add("hidden");
-//      div_anotaciones.classList.remove("flex");
-// })
-
-// function escribir(indice) {
- 
-//  content_notas.value += btn_notas[indice].title+": "+notas.value+"\n";
-//  notas.value="";
-//  div_anotaciones.classList.add("hidden");
-//   div_anotaciones.classList.remove("flex");
-  
-// }
-
-
-  // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  //   anchor.addEventListener("click", function(e) {
-  //     e.preventDefault();
-  //     let target = document.querySelector(this.getAttribute("href"));
-      
-  //     if (target) {
-  //       let startPosition = window.scrollY;
-  //       let targetPosition = target.offsetTop - 50; // Ajusta según el tamaño del navbar
-  //       let distance = targetPosition - startPosition;
-  //       let duration = 800; // Duración de la animación en milisegundos
-  //       let startTime = null;
-  
-  //       function animationScroll(currentTime) {
-  //         if (!startTime) startTime = currentTime;
-  //         let timeElapsed = currentTime - startTime;
-  //         let progress = Math.min(timeElapsed / duration, 1); // Asegura que no pase del 100%
-  
-  //         // Efecto de easing para una transición suave (usamos easeInOutQuad)
-  //         let easedProgress = progress < 0.5 
-  //           ? 2 * progress * progress 
-  //           : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-  
-  //         window.scrollTo(0, startPosition + distance * easedProgress);
-  
-  //         if (timeElapsed < duration) {
-  //           requestAnimationFrame(animationScroll);
-  //         }
-  //       }
-  
-  //       requestAnimationFrame(animationScroll);
-  //     }
-  //   });
-  // });
-
-  // const exit = document.querySelector('.fa-times');
-  // const phone_menu = document.querySelector('.navbar-phone');
-
-  // exit.addEventListener('click',function () {
-    
-  //   phone_menu.style.left='-120px';
-  
-  // })
-
-  
-   -->
-
-<!-- </script> -->
+<script type="module" src="/src/js/main.js"></script>
 
 </body>
 </html>

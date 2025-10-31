@@ -1,81 +1,61 @@
-const pantallas = document.querySelectorAll('.pantalla');
+// src/js/main.js
 
-const links = document.querySelectorAll('a[href^="#pantalla"]');
-
-links.forEach((enlaces)=>{
-  enlaces.addEventListener('click',(e)=>{
-  //  evita recargar pagina
-    e.preventDefault()
-    // da error por focus asi xd lo quito 
-    document.activeElement.blur();
-
-    let destino = document.querySelector(enlaces.getAttribute('href'))
-    let is_form = enlaces.id.startsWith('form')
-    let valido = true
-    let pantalla_actual = enlaces.closest('.pantalla') //scala hasta el padre
-   
-    
-    // pantallas.forEach(pant=>{
-    //    pant.classList.remove('flex')
-    //   pant.classList.add('hidden')
-    // })
-    // destino.classList.add('flex')
-    // destino.classList.remove('hidden')
-   
-    if (is_form) {
-      const esValido= revisarForm(pantalla_actual,valido)
-      // el return de por si se sale de la funcion mas cercana
-      //da impresion de bucle pero no simplemente se sale y sigue
-      // si en caso esto no se cumple
-      if (!esValido) {return}
-      
-    }
- 
-    mostrarPantalla(pantallas,destino)
-    
-
-    })
-
-})
+// 1. Importa las funciones "init" de los otros módulos
+import { initNavigation } from './navigation.js';
+import { initDynamicForms } from './dynamicForm.js';
+// import { initFormSubmit } from './formSubmit.js'; 
+// 2. Ejecuta las funciones cuando el documento esté listo
+// (Es una buena práctica esperar a que todo el HTML esté cargado)
+document.addEventListener('DOMContentLoaded', () => {
+    initNavigation();
+    initDynamicForms();
+    // initFormSubmit();
+});
 
 
-function revisarForm(pantalla,valid) {
-
-  const inpunt_requireds = pantalla.querySelectorAll('input[required]')
-
-  inpunt_requireds.forEach(inputs_r=>{
-  if (!inputs_r.checkValidity()) {
-      inputs_r.reportValidity();
-      valid=false }
-
-  })
-  return valid
-  
-}
 
 
-function mostrarPantalla(window,destiny) {
 
-  window.forEach(pant=>{
-      pant.classList.remove('flex')
-    pant.classList.add('hidden')
-  })
 
-  destiny.classList.add('flex')
-  destiny.classList.remove('hidden')
-}
 
-// fase uno de la validacion form! 
-// const inpunt_requireds = pantalla_actual.querySelectorAll('input[required]')
-// inpunt_requireds.forEach(inputs_r=>{
-// if (!inputs_r.checkValidity()) {
-//     inputs_r.reportValidity();
-//     valid=false }
+// const btn_crear = document.getElementById('nueva_puerta');
+// const container_puertas = document.getElementById('puertas_container');
+// let contador = 0;
 
-// })
-// if (!valid) {
-//   return
+// Delegación para borrar puertas
+// container_puertas.addEventListener('click', (e) => {
+//   if (e.target.classList.contains('fa-x')) {
+//     e.target.closest('.puerta').remove();
+//     // actualizarNumeros()
+//   }
+// });
+
+// Crear nueva puerta
+// btn_crear.addEventListener('click', () => {
+//   btn_crear.remove()
+//   crearPuertas(container_puertas);
+//   container_puertas.append(btn_crear)
+
+// });
+// function actualizarNumeros() {
+//   const puertas = document.querySelectorAll('#puertas_container .bg-red-700')
+//   puertas.forEach((num, i) => {
+//     num.textContent = i + 1
+//     num.nextElementSibling.textContent = `Puerta ${i + 1}`
+//   })
 // }
 
-// -------------forms dinamicos---------
+// function crearPuertas(contenedor) {
+//   contador++;
 
+//   contenedor.insertAdjacentHTML("beforeend", `
+//     <div class="puerta flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-lg w-full h-auto bg-gray-50 shadow-md">
+//       <div class="flex gap-4 items-center justify-between">
+//         <div class="flex gap-4 items-center">
+//           <div class="bg-red-700 text-white px-2.5 py-1 rounded-lg shadow-md">${contador}</div>
+//           <h3>Puerta ${contador}</h3>
+//         </div>
+//         <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
+//       </div> bla bla blaa
+
+// }
