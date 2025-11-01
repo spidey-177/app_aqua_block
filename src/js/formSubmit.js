@@ -1,7 +1,7 @@
 // src/js/formSubmit.js
 import { revisarForm } from './formValidation.js';
 import { mostrarPantalla } from './navigation.js';
-import { enviarEmailDeDatos } from './emailService.js';
+import { enviarEmailConFotos } from './emailService.js'
 
 export function initFormSubmit() {
     const form = document.getElementById('multiStepForm');
@@ -60,6 +60,6 @@ export function initFormSubmit() {
         // 6. ¡Éxito! (Solo se llega aquí si NADA falló)
         console.log("¡Formulario válido! Listo para enviar.");
         // ... aquí llamaríamos a Email.js ...
-        enviarEmailDeDatos();
+        enviarEmailConFotos();
     });
 }
