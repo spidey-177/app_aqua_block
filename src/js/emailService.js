@@ -1,13 +1,13 @@
-// src/js/emailService.js
+/* global emailjs, html2pdf */ // <-- Le dice a tu editor que estas librerías existen
 
 //
-// ESTA FUNCIÓN FORMATEA EL HTML PARA EL PDF
+// ESTA ES TU FUNCIÓN PARA PREPARAR EL HTML.
+// La he dejado exactamente igual, ¡está perfecta!
 //
 function prepararDatosParaEmail() {
     let cuerpoEmail = ""; 
 
     // --- 1. Datos Generales del Usuario ---
-    // (Asegúrate de que los IDs como 'nombre', 'correo' coincidan con tu HTML)
     const nombre = document.getElementById('nombre').value;
     const correo = document.getElementById('correo').value;
     const telefono = document.getElementById('telefono').value;
@@ -24,12 +24,11 @@ function prepararDatosParaEmail() {
         <hr>
     `;
 
-    // --- 2. Datos de Puertas ---
+    // --- 2. Puertas ---
     const puertas = document.querySelectorAll('.puerta');
     if (puertas.length > 0) {
         cuerpoEmail += `<h3>Puertas (${puertas.length})</h3>`;
         puertas.forEach((puerta, index) => {
-            // 'page-break-inside: avoid;' intenta evitar que un solo elemento se corte entre dos páginas
             cuerpoEmail += `
                 <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; page-break-inside: avoid;">
                     <strong>Puerta ${index + 1}</strong>
@@ -45,7 +44,7 @@ function prepararDatosParaEmail() {
         });
     }
 
-    // --- 3. Datos de Garajes ---
+    // --- 3. Garajes ---
     const garajes = document.querySelectorAll('.garaje');
     if (garajes.length > 0) {
         cuerpoEmail += `<h3>Garajes (${garajes.length})</h3>`;
@@ -65,7 +64,7 @@ function prepararDatosParaEmail() {
         });
     }
 
-    // --- 4. Datos de Ventanas ---
+    // --- 4. Ventanas ---
     const ventanas = document.querySelectorAll('.ventana');
     if (ventanas.length > 0) {
         cuerpoEmail += `<h3>Ventanas (${ventanas.length})</h3>`;
@@ -86,5 +85,41 @@ function prepararDatosParaEmail() {
         });
     }
 
-    return cuerpoEmail;
+    return `
+        <div style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4;">
+            ${cuerpoEmail}
+        </div>
+    `;
+}
+
+
+
+export function enviarEmailDeDatos() {
+    
+    //  IDs )
+    const serviceID = 'service_nvz8rop';
+    const templateID = 'template_s9wawjq';
+    // La Public Key ya está en  index.html con emailjs.init()
+
+    //  Muestra un "cargando"
+    alert('Enviando formulario...');
+
+    // Prepara las variables para la plantilla
+    //    ¡IMPORTANTE! la plantilla debe usar esta variable
+    const templateParams = {
+        from_name: document.getElementById('nombre').value,
+        reply_to: document.getElementById('correo').value,
+        cuerpo_del_mensaje: prepararDatosParaEmail() // <-- El HTML va aquí
+    };
+
+    //  Llamar a Email.js para enviar
+    emailjs.send(serviceID, templateID, templateParams)
+        .then(function(response) {
+           console.log('¡ÉXITO!', response.status, response.text);
+           alert('¡Formulario enviado con éxito!');
+           window.location.reload(); 
+        }, function(error) {
+           console.log('FALLO DE ENVÍO...', error);
+           alert('Hubo un error al ENVIAR el email.');
+        });
 }
