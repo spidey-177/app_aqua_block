@@ -3,13 +3,13 @@
 // 1. Importa las funciones "init" de los otros módulos
 import { initNavigation } from './navigation.js';
 import { initDynamicForms } from './dynamicForm.js';
-// import { initFormSubmit } from './formSubmit.js'; 
+import { initFormSubmit } from './formSubmit.js'; 
 // 2. Ejecuta las funciones cuando el documento esté listo
 // (Es una buena práctica esperar a que todo el HTML esté cargado)
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initDynamicForms();
-    // initFormSubmit();
+    initFormSubmit();
 });
 
 
