@@ -26,7 +26,7 @@ function crearElemento(elemento, contenedor) {
                 <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
               </div>
 
-              <div class="flex gap-4 justify-between items-center">
+              <div class="flex gap-2 justify-between items-center">
                 <div class="flex flex-col flex-1">
                   <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
                   <input type="number" name="puertas-ancho[]" class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" placeholder="80" required min="40" max="150" step="1">
