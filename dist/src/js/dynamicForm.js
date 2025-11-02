@@ -26,18 +26,18 @@ function crearElemento(elemento, contenedor) {
                 <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
               </div>
 
-              <div class="flex gap-8 justify-between items-center">
-                <div class="flex flex-col">
+              <div class="flex gap-4 justify-between items-center">
+                <div class="flex flex-col flex-1">
                   <label class="text-gray-600">Ancho (cm)</label>
                   <input type="number" name="puertas-ancho[]" class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" placeholder="80" required min="40" max="150" step="1">
                 </div>
 
-                <div class="flex flex-col">
+                <div class="flex flex-col flex-1">
                   <label class="text-gray-600">Fondo (cm)</label>
                   <input type="number" name="puertas-fondo[]" class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" placeholder="90" min="0" max="150" step="1">
                 </div>
 
-                <div class="flex flex-col">
+                <div class="flex flex-col flex-1">
                   <label class="text-gray-600">Alto (cm)</label>
                   <input type="number" name="puertas-alto[]" class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" placeholder="200" required min="150" max="300" step="1">
                 </div>
@@ -81,8 +81,8 @@ function crearElemento(elemento, contenedor) {
             <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
           </div>
 
-          <div class="flex gap-8 justify-between items-center">
-            <div class="flex flex-col">
+          <div class="flex gap-4 justify-between items-center">
+            <div class="flex flex-col flex-1">
               <label class="text-gray-600">Ancho (cm)</label>
               <input 
                 type="number" 
@@ -96,7 +96,7 @@ function crearElemento(elemento, contenedor) {
               >
             </div>
 
-            <div class="flex flex-col">
+            <div class="flex flex-col flex-1">
               <label class="text-gray-600">Alto (cm)</label>
               <input 
                 type="number" 
@@ -110,19 +110,18 @@ function crearElemento(elemento, contenedor) {
               >
             </div>
 
-            <div class="flex flex-col max-w-2/5">
+          </div>
+            <div class="flex flex-col ">
               <label class="text-gray-600">Automática</label>
               <select 
                 name="garajes_automatica[]" 
-                class="border bg-gray-100 border-gray-300 p-2 rounded-lg text-gray-700 max-w-1/2" 
-                required
-              >
+                class="border bg-gray-100 border-gray-300 p-2 rounded-lg text-gray-700 " 
+                required>
                 <option value="">Selecciona una opción</option>
                 <option value="sí">Sí</option>
                 <option value="no">No</option>
               </select>
             </div>
-          </div>
 
           <div class="flex flex-col">
             <label class="text-gray-600">Material</label>
@@ -184,7 +183,7 @@ function crearElemento(elemento, contenedor) {
           <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
         </div>
 
-        <div class="flex gap-8 justify-between items-center">
+        <div class="flex gap-4 justify-between items-center">
           <div class="flex flex-col">
             <label class="text-gray-600">Ancho (cm)</label>
             <input 

@@ -14,15 +14,15 @@ export async function enviarEmailConFotos() {
     const templateID = 'template_s9wawjq';
     // La Public Key ya está en tu index.html con emailjs.init()
 
-    alert('📤 Enviando formulario... Este proceso puede tardar.\nPor favor, espera la confirmación.');
+    console.log('📤 Enviando formulario... Este proceso puede tardar.\nPor favor, espera la confirmación.');
 
     try {
         // --- PASO A: SUBIR LAS FOTOS ---
         console.log('Iniciando subida de fotos a Cloudinary...');
-        alert('⏳ Subiendo fotos, por favor espera...');
+        console.log('⏳ Subiendo fotos, por favor espera...');
         const urlsFotos = await subirTodasLasFotos();
         console.log('Fotos subidas con éxito:', urlsFotos);
-        alert('✅ Fotos subidas correctamente. Preparando el correo...');
+        console.log('✅ Fotos subidas correctamente. Preparando el correo...');
 
         // --- PASO B: PREPARAR EL EMAIL CON LOS ENLACES ---
         console.log('Preparando HTML del email...');
@@ -39,8 +39,8 @@ export async function enviarEmailConFotos() {
         await emailjs.send(serviceID, templateID, templateParams);
         
         console.log('¡ÉXITO!');
-        alert('🎉 ¡Formulario y fotos enviados con éxito!');
-        window.location.reload();
+        console.log('🎉 ¡Formulario y fotos enviados con éxito!');
+        //window.location.reload();
 
     } catch (error) {
         console.error('❌ ERROR FATAL:', error);
@@ -120,7 +120,7 @@ function prepararDatosParaEmail(urlsFotos) {
             
             cuerpoEmail += `
                 <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
-                    <strong>Puerta ${index + 1}</strong>
+                    <strong>Puerta </strong>
                     <ul>
                         <li>Ancho: ${puerta.querySelector('input[name="puertas-ancho[]"]').value} cm</li>
                         <li>Fondo: ${puerta.querySelector('input[name="puertas-fondo[]"]').value} cm</li>
@@ -150,7 +150,7 @@ function prepararDatosParaEmail(urlsFotos) {
 
             cuerpoEmail += `
                 <div style="border:1px solid #ccc;padding:10px;margin-bottom:10px;">
-                    <strong>Garaje ${index + 1}</strong>
+                    <strong>Garaje</strong>
                     <ul>
                         <li>Ancho: ${garaje.querySelector('input[name="garajes_ancho[]"]').value} cm</li>
                         <li>Alto: ${garaje.querySelector('input[name="garajes_alto[]"]').value} cm</li>
@@ -180,7 +180,7 @@ function prepararDatosParaEmail(urlsFotos) {
 
             cuerpoEmail += `
                 <div style="border:1px solid #ccc;padding:10px;margin-bottom:10px;">
-                    <strong>Ventana ${index + 1}</strong>
+                    <strong>Ventana </strong>
                     <ul>
                         <li>Ancho: ${ventana.querySelector('input[name="ventanas_ancho[]"]').value} cm</li>
                         <li>Alto: ${ventana.querySelector('input[name="ventanas_alto[]"]').value} cm</li>

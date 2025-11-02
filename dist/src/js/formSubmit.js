@@ -5,9 +5,12 @@ import { enviarEmailConFotos } from './emailService.js'
 
 export function initFormSubmit() {
     const form = document.getElementById('multiStepForm');
+    const pantalla_carga = document.getElementById('pantalla-carga')
+    const pantalla_confirm = document.getElementById('pantalla-confirm')
+
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit',async (e) => {
         e.preventDefault();
         
         const pantallas = document.querySelectorAll('.pantalla');
@@ -58,8 +61,35 @@ export function initFormSubmit() {
         }
 
         // 6. ¡Éxito! (Solo se llega aquí si NADA falló)
-        console.log("¡Formulario válido! Listo para enviar.");
-        // ... aquí llamaríamos a Email.js ...
-        enviarEmailConFotos();
+        // console.log("¡Formulario válido! Listo para enviar.");
+        //     pantalla_carga.classList.remove('hidden')
+        //     pantalla_carga.classList.add('flex')
+        // // ... aquí llamaríamos a Email.js ...
+        // enviarEmailConFotos();
+        try {
+            // 1. MOSTRAMOS la pantalla de carga
+            pantalla_carga.classList.remove('hidden');
+            pantalla_carga.classList.add('flex');
+
+            // 2. HACEMOS el trabajo pesado y ESPERAMOS
+            console.log("¡Formulario válido! Llamando a enviarEmailConFotos...");
+            await enviarEmailConFotos(); // <-- ¡Tu 'await' está aquí!
+            
+            // 3. ¡ÉXITO! Si llegamos aquí, todo salió bien.
+            //    Mostramos la pantalla de confirmación.
+            mostrarPantalla(pantallas, pantalla_confirm);
+
+        } catch (error) {
+            // 4. ¡PLAN B! Si 'enviarEmailConFotos' falló.
+            //    (Tu 'enviarEmailConFotos' ya muestra sus propios 'alert'
+            //    así que solo lo registramos en consola).
+            console.error("Error capturado en formSubmit:", error);
+        
+        } finally {
+            // 5. ¡LIMPIEZA! Esto se ejecuta SIEMPRE.
+            //    Nos aseguramos de que la pantalla de carga desaparezca.
+            pantalla_carga.classList.add('hidden');
+            pantalla_carga.classList.remove('flex');
+        }
     });
 }

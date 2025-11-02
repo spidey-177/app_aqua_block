@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Formulario Multipaso con Confirmación</title>
+  <title>Formulario-Aqua-Block</title>
   <link rel="stylesheet" href="output.css">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon.png">
 
@@ -233,9 +233,14 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
         </a>
       </div>
     </div>
-    <button type="submit" id="submit-btn"
-    class="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full mb-4 cursor-pointer"
-    >Enviar</button>
+    <div class="w-full py-2 px-5 flex items-center justify-center">
+      <button type="submit" id="submit-btn"
+      class="bg-red-600 hover:bg-red-700 hover:transform hover:scale-95 transition text-white font-bold py-2 px-4 rounded-lg mb-4
+      w-full cursor-pointer"
+      >Enviar</button>
+
+    </div>
+    
   </section>
 
 
@@ -265,7 +270,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
     </div>
     <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
       <!-- //id="form_puertas" -->
-       <a href="#pantalla-selection-typeform"  class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+       <a href="#pantalla-selection-typeform"  class="btn_red">Añadir <i class="fa-solid pt-1 pl-2 fa-arrow-right-long"></i>
       </a>
     </div>
 
@@ -299,7 +304,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
     </div>
     <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
       <!-- id="form-garages" -->
-       <a href="#pantalla-selection-typeform"  class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+       <a href="#pantalla-selection-typeform"  class="btn_red">Añadir <i class="fa-solid pt-1 pl-2 fa-arrow-right-long"></i>
       </a>
     </div>
 
@@ -332,22 +337,38 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
     </div>
     <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
       <!-- id="form-ventanas" -->
-       <a href="#pantalla-selection-typeform"  class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+       <a href="#pantalla-selection-typeform"  class="btn_red">Añadir <i class="fa-solid pt-1 pl-2 fa-arrow-right-long"></i>
       </a>
     </div>
 
 
 
   </section>
+  <section id="pantalla-carga" class="fixed top-0 left-0 z-50 w-full h-screen
+          hidden flex-col items-center justify-center 
+          bg-[#FFFAFA]/80 backdrop-blur-md
+          "> <img src="assets/logo4.png" alt="Cargando..." class="size-60 max-w-2xl opacity-90 animate-jiggle">
+    <p class="text-2xl text-gray-700 font-bold">Enviando tu informe...</p>
+    <p class="text-gray-600">Por favor, espera un momento.</p>
+  </section>
 
   
 
   <!-- Pantalla 7: Confirmación -->
-  <!-- <section id="pantalla-confirm" class="pantalla">
-    <h2>¡Gracias!</h2>
-    <p>Tus datos se han enviado correctamente.</p>
-    <button id="btn-volver">Volver al inicio</button>
-  </section> -->
+  <section id="pantalla-confirm" class="pantalla
+  w-full h-full hidden flex-col justify-center items-center
+  overflow-hidden shadow-lg rounded-2xl animate-fade-in
+  gap-4 relative bg-gray-50 max-w-5xl mx-auto
+  ">
+    <div class="text-center flex flex-col items-center justify-center gap-6 p-4">
+      <i class="fa-solid fa-circle-check text-red-500 text-8xl"></i>
+      <h2 class="text-2xl">¡Gracias!</h2>
+      <p>Tus datos se han enviado correctamente.</p>
+      <p class="text-gray-500 text-sm">Gracias por usar nuestros servicios.</p>
+      <a href="index.html" class="btn_red max-w-xs">Hacerlo de nuevo</a>
+    </div>
+  </section>
+
 </form>
 <script type="module" src="src/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
