@@ -13,18 +13,21 @@
 <body>
 
 <form id="multiStepForm" class="overflow-hidden 
-bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w-full  " novalidate>
+bg-gradient-to-br from-gray-200 via-gray-400 to-white text-gray-800 p-4  h-dvh w-full  " novalidate>
   <!-- Pantalla 1: Inicio   flex falta aqui-->
   <section id="pantalla-inicio" class="pantalla 
   active w-full h-full  flex flex-col items-center  bg-gray-100
-  overflow-hidden  shadow-lg rounded-2xl mb-10  max-w-5xl mx-auto
-  animate-fade-in-down 
-  gap-4 relative">
+  overflow-hidden  shadow-lg rounded-xs mb-10  max-w-4xl mx-auto
+  animate-fade-in-down font-sans 
+  gap-4 relative" style="box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.538);">
     <div class="text-center flex flex-col items-center justify-center gap-6 mt-20 p-4 animate-slide-in-left">
-      <h1 class="text-4xl ">Bienvenidos</h1>
-      <p class="">Envía fácilmente las medidas y fotos de tus puertas o puertas de garaje.</p>
-      <p class="text-gray-500 text-sm">Nuestro equipo se pondrá en contacto contigo ^_~.</p>
-      <a href="#pantalla-form" class="btn_red">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+      <h1 class="text-5xl md:text-5xl lg:text-6xl italic ">Bienvenidos!</h1>
+      <div class="border-l-4 border-red-500 my-4 p-2 max-w-2xl">
+         <p class="text-lg md:text-xl lg:text-2xl text-gray-600">Envía fácilmente las medidas y fotos de tus puertas o puertas de garaje.</p>
+         <p class="text-gray-500 text-sm">Nuestro equipo se pondrá en contacto contigo ^_~.</p>
+      </div>
+     
+      <a href="#pantalla-form" class="btn_red" style="box-shadow: 6px 6px 1px black;">Comenzar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
       </a>
       <small class="text-gray-400">© 2025 Aqua Block. Todos los derechos reservados.</small>
 
@@ -39,30 +42,30 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
   <!-- Pantalla 2: Formulario-usuario poner flex-->
   <section id="pantalla-form" class="pantalla
   w-full h-full hidden flex-col justify-around items-center
-  overflow-hidden shadow-lg rounded-2xl animate-fade-in
-  gap-4 relative bg-gray-50 max-w-5xl mx-auto 
-  ">
+  overflow-hidden shadow-lg rounded-xs animate-fade-in
+  gap-4 relative bg-gray-50 max-w-5xl mx-auto  font-sans
+  " style="box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.538);">
     <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full text-center p-1 flex  items-center justify-center relative">
-      <a href="#pantalla-inicio" class="fa-solid fa-arrow-left  p-3 rounded-lg
+      <a href="#pantalla-inicio" class="fa-solid fa-arrow-left  p-3 text-red-600
       flex-1
       "></a>
       <div class="flex flex-col items-center justify-center flex-10">
-        <h2 class="text-2xl">Aqua Block!</h2>
+        <h2 class="text-2xl italic">Aqua Block!</h2>
         <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-red-700 to-transparent mx-auto"></div>
       </div>
     </div>
-    <div class="flex-10  w-full p-2 rounded-lg border-b-2 border-gray-300">
-      <div class="flex justify-between gap-4">
+    <div class="flex-10  w-full p-4 rounded-xs border-b-2 border-gray-100 overflow-y-scroll">
+      <div class="flex justify-between gap-4 border-l-4 border-red-500 p-2">
         <div>
-          <p class="text-gray-400">Añade tus datos para continuar</p>
+          <p class="text-lg md:text-xl lg:text-xl text-gray-700">Añade tus datos para continuar</p>
         </div>
         <!-- --hacer validacion de datos-- -->
-          <a href="#pantalla-selection-typeform"class="btn_red max-w-2xs" id="form_usuario">Continuar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
+          <a href="#pantalla-selection-typeform"class="btn_red max-w-2xs" id="form_usuario" style="box-shadow: 6px 6px 1px black;">Continuar <i class="fa-solid pt-1 fa-arrow-right-long"></i>
         </a>
       </div>
-      <div class="flex flex-col gap-4 mt-4 p-4  rounded-lg shadow-inner">
+      <div class="flex flex-col gap-4 mt-4 p-4  rounded-xs border-l-4 border-black " >
         <div>
-          <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+          <label for="nombre" class="block  font-medium text-gray-700 text-lg md:text-xl lg:text-xl">Nombre Completo *</label>
           <input 
             type="text" 
             id="nombre" 
@@ -78,7 +81,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
         </div>
 
         <div>
-          <label for="correo" class="block text-sm font-medium text-gray-700">Email</label>
+          <label for="correo" class="block  font-medium text-gray-700 text-lg md:text-xl lg:text-xl">Email</label>
           <input 
             type="email" 
             id="correo" 
@@ -90,7 +93,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
         </div>
 
         <div>
-          <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono</label>
+          <label for="telefono" class="block  font-medium text-gray-700 text-lg md:text-xl lg:text-xl">Teléfono</label>
           <input 
             type="tel" 
             id="telefono" 
@@ -104,7 +107,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
         </div>
 
         <div>
-          <label for="direccion" class="block text-sm font-medium text-gray-700">Dirección</label>
+          <label for="direccion" class="block  font-medium text-gray-700 text-lg md:text-xl lg:text-xl">Dirección</label>
           <input 
             type="text" 
             id="direccion" 
@@ -119,7 +122,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
 
         <div class="flex gap-2 justify-between">
           <div>
-            <label for="poblacion" class="block text-sm font-medium text-gray-700">Población</label>
+            <label for="poblacion" class="block  font-medium text-gray-700 text-lg md:text-xl lg:text-xl">Población</label>
             <input 
               type="text" 
               id="poblacion" 
@@ -135,7 +138,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
           </div>
 
           <div>
-            <label for="codigo_postal" class="block text-sm font-medium text-gray-700">Código Postal</label>
+            <label for="codigo_postal" class="block  font-medium text-gray-700 text-lg md:text-xl lg:text-xl">Código Postal</label>
             <input 
               type="text" 
               id="codigo_postal" 
@@ -152,7 +155,7 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
             
       </div>
     </div>
-    <footer class="flex-1 p-1">
+    <footer class="flex-1 p-1 text-lg md:text-xl lg:text-x">
       <small class="text-gray-400">© 2025 Aqua Block. Todos los derechos reservados.</small>
 
     </footer>
@@ -161,11 +164,11 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
    <!-- Pantalla 3: Seleccion-tipo-puertas flex!-->
   <section id="pantalla-selection-typeform" class="pantalla
   w-full h-full hidden flex-col justify-around items-center
-  overflow-hidden shadow-lg rounded-2xl animate-fade-in
+  overflow-hidden shadow-lg rounded-xs animate-fade-in
   gap-4 relative bg-gray-50 max-w-5xl mx-auto
-  ">
+  " style="box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.538);">
     <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full text-center p-1 flex  items-center justify-center relative">
-      <a href="#pantalla-form" class="fa-solid fa-arrow-left  p-3 rounded-lg
+      <a href="#pantalla-form" class="fa-solid fa-arrow-left  p-3 text-red-600
       flex-1
       "></a>
       <div class="flex flex-col items-center justify-center flex-10">
@@ -173,24 +176,28 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
         <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-red-700 to-transparent mx-auto"></div>
       </div>
     </div>
-    <div class="flex-10 flex flex-col justify-around  w-full p-2  border-b-2 border-gray-300 max-w-2xl"
+    <div class="flex-10 flex flex-col justify-around  w-full p-4  border-b-2 border-gray-300 max-w-2xl"
     id=""
     >
-      <div class="flex flex-col justify-between gap-2">
-        <p>Tipo de puertas</p>
-          <p class="text-gray-400">Selecciona un tipo de puerta</p>
+      <div class="flex flex-col justify-between gap-2 border-l-4 border-red-500 p-2">
+        <p class="text-xl md:text-xl lg:text-xl">Tipo de puertas</p>
+          <p class="text-gray-400 text-lg md:text-xl lg:text-xl">Selecciona un tipo de puerta para medir</p>
       </div>
       <div class="flex flex-col justify-evenly gap-4 mt-4 p-4  rounded-lg  w-full h-full bg-gray-50">
-        <a href="#pantalla-form-doors" class="flex-1 flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer
-          hover:border-1 hover:border-red-700 transition group 
-        shadow-lg
-        ">
+        <a href="#pantalla-form-doors" class="flex-1 flex items-center justify-between p-4 border-3 border-gray-800 rounded-xs cursor-pointer
+           hover:transform hover:scale-95 transition group 
+        shadow-lg -skew-x-2
+        " style="box-shadow: 8px 8px 1px rgb(213, 2, 2);">
           <div class="flex gap-6 items-center">
-            <i class="fa-solid fa-door-open bg-gray-200 group-hover:bg-red-700 group-hover:text-white
-            p-4 rounded-lg shadow-lg group-hover:scale-110  transition
-            "></i>
-            <div>
-              <h3>Puertas</h3>
+            <div class=" bg-red-600
+            p-4 rounded-xs shadow-lg group-hover:scale-110  transition -skew-x-4
+            ">
+              <i class="fa-solid fa-door-open bg-red-600 text-white
+               rounded-lg shadow-lg group-hover:scale-110  transition skew-x-4
+              "></i>    
+            </div>
+            <div class="skew-x-2">
+              <h3 class="text-xl md:text-xl lg:text-xl">Puertas</h3>
               <p class="text-gray-400">Selecciona un tipo de puerta</p>
             </div>
           </div>
@@ -198,15 +205,21 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
           group-hover:text-red-700 transition group-hover:scale-125
           "></i>
         </a>
-        <a href="#pantalla-form-garages" class="flex-1 flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer
-          hover:border-1 hover:border-red-700 transition group 
-        shadow-lg"> 
+        <a href="#pantalla-form-garages" class="flex-1 flex items-center justify-between p-4 border-3 border-gray-800 rounded-xs cursor-pointer
+          hover:transform hover:scale-95 transition group -skew-x-2
+        shadow-lg" style="box-shadow: 8px 8px 1px rgb(213, 2, 2);">
           <div class="flex gap-6 items-center">
-            <i class="fa-solid fa-warehouse bg-gray-200 group-hover:bg-red-700 group-hover:text-white
-            p-4 rounded-lg shadow-lg group-hover:scale-110  transition
-            "></i>
-            <div>
-              <h3>Puertas de garajes</h3>
+            <div class=" bg-red-600
+            p-4 rounded-xs shadow-lg group-hover:scale-110  transition -skew-x-4
+            ">
+              <i class="fa-solid fa-warehouse bg-red-600 text-white
+               rounded-xs shadow-lg group-hover:scale-110  transition skew-x-4
+              "></i>
+
+            </div>
+            
+            <div class="skew-x-2">
+              <h3 class="text-xl md:text-xl lg:text-xl">Puertas de garajes</h3>
               <p class="text-gray-400">Selecciona un tipo de puerta de garaje</p>
             </div>
            </div>
@@ -215,16 +228,21 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
           group-hover:text-red-700 transition group-hover:scale-125
           "></i>
         </a>
-        
-        <a href="#pantalla-form-windows" class="flex-1 flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer
-          hover:border-1 hover:border-red-700 transition group 
-        shadow-lg">
+
+        <a href="#pantalla-form-windows" class="flex-1 flex items-center justify-between p-4 border-3 border-gray-800 rounded-xs cursor-pointer
+          hover:transform hover:scale-95 transition group -skew-x-2
+        shadow-lg" style="box-shadow: 8px 8px 1px rgb(213, 2, 2);">
           <div class="flex gap-6 items-center">
-            <i class="fa-regular fa-window-maximize bg-gray-200 group-hover:bg-red-700 group-hover:text-white
-            p-4 rounded-lg shadow-lg group-hover:scale-110  transition
-            "></i>
-            <div>
-              <h3>Ventanas</h3>
+            <div  class=" bg-red-600
+            p-4 rounded-xs shadow-lg group-hover:scale-110  transition -skew-x-4
+            ">
+              <i class="fa-regular fa-window-maximize bg-red-600 text-white
+               rounded-lg shadow-lg group-hover:scale-110  transition skew-x-4
+              "></i>
+
+            </div>  
+            <div class="skew-x-2">
+              <h3 class="text-xl md:text-xl lg:text-xl">Ventanas</h3>
               <p class="text-gray-400">Selecciona un tipo de ventana</p>
             </div>
           </div>
@@ -235,9 +253,9 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
     </div>
     <div class="w-full py-2 px-5 flex items-center justify-center">
       <button type="submit" id="submit-btn"
-      class="bg-red-600 hover:bg-red-700 hover:transform hover:scale-95 transition text-white font-bold py-2 px-4 rounded-lg mb-4
+      class="bg-red-600 hover:bg-red-500 hover:transform hover:scale-95 transition text-white font-bold py-2 px-4 rounded-xs mb-4
       w-full cursor-pointer"
-      >Enviar</button>
+      style="box-shadow: 6px 6px 1px black;">Enviar</button>
 
     </div>
     
@@ -247,15 +265,15 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
    <!-- Pantalla 4: Formulario-puertas -->
   <section id="pantalla-form-doors" class="pantalla
  w-full h-full hidden flex-col justify-around items-center
-  overflow-hidden shadow-lg rounded-2xl animate-fade-in-right
+  overflow-hidden shadow-lg rounded-xs animate-fade-in-right
   gap-4 relative bg-gray-50 max-w-5xl mx-auto
-  ">
+  " style="box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.538);">
     <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full  p-2.5 flex  items-center justify-center relative">
-      <a href="#pantalla-selection-typeform" class="fa-solid fa-arrow-left  p-3 rounded-lg
+      <a href="#pantalla-selection-typeform" class="fa-solid fa-arrow-left  p-3 
       flex-1
       " ></a>
       <div class="flex flex-col items-start justify-start flex-10">
-        <h2 >Puertas Normales</h2>
+        <h2 class="text-xl md:text-xl lg:text-xl">Puertas Normales</h2>
         <p class="text-gray-400">Danos las medidas! (┬┬﹏┬┬)</p>
       </div>
     </div>
@@ -263,15 +281,14 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
     id="puertas_container">
       <!-- Contenido dinámico de puertas -->
 
-      <div id="puerta_nueva" class="crear flex items-center justify-center gap-2 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md cursor-pointer
-     text-gray-400 hover:bg-gray-100 transition border-dashed border-2 border-gray-300 hover:border-red-700 hover:text-red-700">
-        <p><i class="fa-solid fa-plus"></i> Añadir nueva puerta</p>
+      <div id="puerta_nueva" class="crear flex items-center justify-center gap-2 mt-4 p-4  rounded-xs w-full h-auto bg-gray-50 shadow-md cursor-pointer
+     text-gray-400 hover:bg-gray-100 transition border-dashed border-3 border-gray-300 hover:border-red-700 hover:text-red-700">
+        <p class="text-lg "><i class="fa-solid fa-plus text-lg "></i> Añadir nueva puerta</p>
       </div>
     </div>
     <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
       <!-- //id="form_puertas" -->
-       <a href="#pantalla-selection-typeform"  class="btn_red">Añadir <i class="fa-solid pt-1 pl-2 fa-arrow-right-long"></i>
-      </a>
+       <a href="#pantalla-selection-typeform"  class="btn_red text-xl md:text-xl lg:text-xl" style="box-shadow: 6px 6px 1px black;">Añadir</a>
     </div>
 
 
@@ -281,15 +298,15 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
   <!-- Pantalla 5: Formulario-puertas garage -->
   <section id="pantalla-form-garages" class="pantalla
  w-full h-full hidden flex-col justify-around items-center
-  overflow-hidden shadow-lg rounded-2xl animate-fade-in-right
+  overflow-hidden shadow-lg rounded-xs animate-fade-in-right
   gap-4 relative bg-gray-50 max-w-5xl mx-auto
-  ">
+  " style="box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.538);">
     <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full  p-2.5 flex  items-center justify-center relative">
       <a href="#pantalla-selection-typeform" class="fa-solid fa-arrow-left  p-3 rounded-lg
       flex-1
       " ></a>
       <div class="flex flex-col items-start justify-start flex-10">
-        <h2 >Puertas Garage</h2>
+        <h2 class="text-xl md:text-xl lg:text-xl">Puertas Garage</h2>
         <p class="text-gray-400">Necesitamos las medidas! ╰(*°▽°*)╯</p>
       </div>
     </div>
@@ -297,15 +314,14 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
     id="garage_container">
       <!-- Contenido dinámico de puertas de garaje -->
 
-      <div id="garages_nueva" class="crear flex items-center justify-center gap-2 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md cursor-pointer
-     text-gray-400 hover:bg-gray-100 transition border-dashed border-2 border-gray-300 hover:border-red-700 hover:text-red-700">
-        <p><i class="fa-solid fa-plus"></i> Añadir nueva puerta</p>
+      <div id="garages_nueva" class="crear flex items-center justify-center gap-2 mt-4 p-4  rounded-xs w-full h-auto bg-gray-50 shadow-md cursor-pointer
+     text-gray-400 hover:bg-gray-100 transition border-dashed border-3 border-gray-300 hover:border-red-700 hover:text-red-700">
+        <p class="text-lg "><i class="fa-solid fa-plus"></i> Añadir nueva puerta</p>
       </div>
     </div>
     <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
       <!-- id="form-garages" -->
-       <a href="#pantalla-selection-typeform"  class="btn_red">Añadir <i class="fa-solid pt-1 pl-2 fa-arrow-right-long"></i>
-      </a>
+       <a href="#pantalla-selection-typeform"  class="btn_red text-xl md:text-xl lg:text-xl"style="box-shadow: 6px 6px 1px black;">Añadir </a>
     </div>
 
 
@@ -314,15 +330,15 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
   <!-- Pantalla 6: Formulario-puertas windows -->
   <section id="pantalla-form-windows" class="pantalla
  w-full h-full hidden flex-col justify-around items-center
-  overflow-hidden shadow-lg rounded-2xl animate-fade-in-right
+  overflow-hidden shadow-lg rounded-xs animate-fade-in-right
   gap-4 relative bg-gray-50 max-w-5xl mx-auto
-  ">
+  "style="box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.538);">
     <div class="flex-1  border-b-2 border-gray-300 pb-2 w-full  p-2.5 flex  items-center justify-center relative">
       <a href="#pantalla-selection-typeform" class="fa-solid fa-arrow-left  p-3 rounded-lg
       flex-1
       " ></a>
       <div class="flex flex-col items-start justify-start flex-10">
-        <h2 >Ventanas</h2>
+        <h2 class="text-xl md:text-xl lg:text-xl">Ventanas</h2>
         <p class="text-gray-400">Necesitamos las medidas! ╰(*°▽°*)╯</p>
       </div>
     </div>
@@ -330,15 +346,14 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
     id="windows_container">
       <!-- campos dinamicos de las Ventanas -->
 
-      <div id="windows_nueva" class="crear flex items-center justify-center gap-2 mt-4 p-4  rounded-lg w-full h-auto bg-gray-50 shadow-md cursor-pointer
-     text-gray-400 hover:bg-gray-100 transition border-dashed border-2 border-gray-300 hover:border-red-700 hover:text-red-700">
-        <p><i class="fa-solid fa-plus"></i> Añadir nueva ventana</p>
+      <div id="windows_nueva" class="crear flex items-center justify-center gap-2 mt-4 p-4  rounded-xs w-full h-auto bg-gray-50 shadow-md cursor-pointer
+     text-gray-400 hover:bg-gray-100 transition border-dashed border-3 border-gray-300 hover:border-red-700 hover:text-red-700">
+        <p class="text-lg "><i class="fa-solid fa-plus"></i> Añadir nueva ventana</p>
       </div>
     </div>
     <div class="flex-1  flex items-center justify-center w-full px-2 py-3">
       <!-- id="form-ventanas" -->
-       <a href="#pantalla-selection-typeform"  class="btn_red">Añadir <i class="fa-solid pt-1 pl-2 fa-arrow-right-long"></i>
-      </a>
+       <a href="#pantalla-selection-typeform"  class="btn_red text-xl md:text-xl lg:text-xl" style="box-shadow: 6px 6px 1px black;">Añadir </a>
     </div>
 
 
@@ -348,8 +363,8 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
           hidden flex-col items-center justify-center 
           bg-[#FFFAFA]/80 backdrop-blur-md
           "> <img src="assets/logo4.png" alt="Cargando..." class="size-60 max-w-2xl opacity-90 animate-jiggle">
-    <p class="text-2xl text-gray-700 font-bold">Enviando tu informe...</p>
-    <p class="text-gray-600">Por favor, espera un momento.</p>
+    <p class="text-3xl md:text-3xl lg:text-4xl text-gray-700 font-bold">Enviando tu informe...</p>
+    <p class="text-gray-600">Por favor, espera un momento （￣︶￣）↗.</p>
   </section>
 
   
@@ -357,15 +372,15 @@ bg-gradient-to-br from-white via-gray-300 to-gray-500 text-gray-800 p-4  h-dvh w
   <!-- Pantalla 7: Confirmación -->
   <section id="pantalla-confirm" class="pantalla
   w-full h-full hidden flex-col justify-center items-center
-  overflow-hidden shadow-lg rounded-2xl animate-fade-in
+  overflow-hidden shadow-lg rounded-xs animate-fade-in
   gap-4 relative bg-gray-50 max-w-5xl mx-auto
-  ">
+  "style="box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.538);">
     <div class="text-center flex flex-col items-center justify-center gap-6 p-4">
-      <i class="fa-solid fa-circle-check text-red-500 text-8xl"></i>
-      <h2 class="text-2xl">¡Gracias!</h2>
-      <p>Tus datos se han enviado correctamente.</p>
+      <i class="fa-solid fa-circle-check text-red-500 text-8xl animate-jiggle"></i>
+      <h2 class="text-3xl md:text-3xl lg:text-4xl">¡Gracias!</h2>
+      <p class="text-xl">Tus datos se han enviado correctamente.</p>
       <p class="text-gray-500 text-sm">Gracias por usar nuestros servicios.</p>
-      <a href="index.html" class="btn_red max-w-xs">Hacerlo de nuevo</a>
+      <a href="index.html" class="btn_red max-w-xs text-xl md:text-xl lg:text-xl"style="box-shadow: 6px 6px 1px black;">Hacerlo de nuevo?</a>
     </div>
   </section>
 

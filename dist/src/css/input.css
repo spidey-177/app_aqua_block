@@ -3,11 +3,11 @@
 
 /* esto es una utilidad no moy recomendad (aprende REACT y haz componentes) */
 .input_style{
-    @apply mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100
-                        focus:ring-red-500 focus:border-red-500 text-gray-800 placeholder:text-gray-400;
+    @apply mt-1 block w-full p-2 border border-gray-600 rounded-xs shadow-sm
+      focus:ring-red-400 focus:border-red-500 text-gray-800 placeholder:text-gray-400;
 }
 .btn_red{
     @apply bg-gradient-to-br from-red-700 via-red-600 to-red-400 text-white px-4 py-3 flex items-center justify-center gap-2
-          hover:scale-90 hover:contrast-125 transition-all duration-400 w-full cursor-pointer
-        rounded;
+          hover:scale-95 hover:contrast-125 transition-all duration-200 w-full cursor-pointer
+        rounded-xs;
 }

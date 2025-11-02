@@ -17,35 +17,35 @@ function crearElemento(elemento, contenedor) {
       case 'puerta':
         contadores.puertas++;
          contenedor.insertAdjacentHTML("beforeend", `
-            <div class="puerta flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-lg w-full h-auto bg-gray-50 shadow-md">
+            <div class="puerta flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-xs w-full h-auto bg-gray-50 shadow-xl border-l-3 border-black">
               <div class="flex gap-4 items-center justify-between">
                 <div class="flex gap-4 items-center">
-                  <div class="bg-red-700 text-white px-2.5 py-1 rounded-lg shadow-md num-puerta">${contadores.puertas}</div>
-                  <h3>Puerta ${contadores.puertas}</h3>
+                  <div class="bg-red-600 text-white px-2.5 py-1 rounded-lg shadow-md num-puerta">${contadores.puertas}</div>
+                  <h3 class="text-lg md:text-xl lg:text-xl">Puerta ${contadores.puertas}</h3>
                 </div>
                 <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
               </div>
 
               <div class="flex gap-4 justify-between items-center">
                 <div class="flex flex-col flex-1">
-                  <label class="text-gray-600">Ancho (cm)</label>
-                  <input type="number" name="puertas-ancho[]" class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" placeholder="80" required min="40" max="150" step="1">
+                  <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
+                  <input type="number" name="puertas-ancho[]" class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" placeholder="80" required min="40" max="150" step="1">
                 </div>
 
                 <div class="flex flex-col flex-1">
-                  <label class="text-gray-600">Fondo (cm)</label>
-                  <input type="number" name="puertas-fondo[]" class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" placeholder="90" min="0" max="150" step="1">
+                  <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Fondo (cm)</label>
+                  <input type="number" name="puertas-fondo[]" class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" placeholder="90" min="0" max="150" step="1">
                 </div>
 
                 <div class="flex flex-col flex-1">
-                  <label class="text-gray-600">Alto (cm)</label>
-                  <input type="number" name="puertas-alto[]" class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" placeholder="200" required min="150" max="300" step="1">
+                  <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
+                  <input type="number" name="puertas-alto[]" class="border  border-gray-600 shadow-sm p-2 rounded-xs w-full" placeholder="200" required min="150" max="300" step="1">
                 </div>
               </div>
 
               <div class="flex flex-col">
-                <label class="text-gray-600">Tipo de Puerta</label>
-                <select name="puertas-material[]" class="border bg-gray-100 border-gray-300 p-2 rounded-lg text-gray-700" required>
+                <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Tipo de Puerta</label>
+                <select name="puertas-material[]" class="border  border-gray-600 shadow-sm p-2 rounded-xs w-full" required>
                   <option value="">Selecciona un tipo</option>
                   <option value="madera">Madera</option>
                   <option value="metal">Metal</option>
@@ -53,14 +53,14 @@ function crearElemento(elemento, contenedor) {
                 </select>
               </div>
 
-              <div class="flex flex-col">
+              <div class="flex flex-col text-lg md:text-xl lg:text-xl">
                 <label class="text-gray-600">Observaciones</label>
-                <textarea name="puertas-observaciones[]" class="border border-gray-300 bg-gray-100 p-2 rounded-lg" placeholder="Detalles adicionales (opcional)" maxlength="200"></textarea>
+                <textarea name="puertas-observaciones[]" class="border  border-gray-600 shadow-sm p-2 rounded-xs w-full" placeholder="Detalles adicionales (opcional)" maxlength="200"></textarea>
               </div>
 
               <div class="flex flex-col">
                 <h3>Fotos</h3>
-                <label id="label-puertas-fotos${contadores.puertas}" for="puertas-fotos${contadores.puertas}" class="text-gray-600 w-full bg-gray-100 py-5 px-4 border-dashed border-2 border-gray-300 rounded-lg text-center cursor-pointer hover:border-red-700 hover:text-red-700">
+                <label id="label-puertas-fotos${contadores.puertas}" for="puertas-fotos${contadores.puertas}" class="text-gray-600 w-full  py-5 px-4 border-dashed border-3 border-gray-600 rounded-xs text-center cursor-pointer hover:border-red-700 hover:text-red-700">
                   <i class="fa-solid fa-upload"></i> Subir fotos (mínimo 2)
                 </label>
                 <input type="file" accept="image/*" id="puertas-fotos${contadores.puertas}" name="puertas-fotos[]" capture="environment" class="border border-gray-300 bg-gray-100 p-2 rounded-lg" multiple hidden>
@@ -72,22 +72,22 @@ function crearElemento(elemento, contenedor) {
       case 'garage':
         contadores.garages++;
         contenedor.insertAdjacentHTML("beforeend", `
-            <div class="garaje flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-lg w-full h-auto bg-gray-50 shadow-md">
+            <div class="garaje flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-xs w-full h-auto bg-gray-50 shadow-xl border-l-3 border-black">
           <div class="flex gap-4 items-center justify-between">
             <div class="flex gap-4 items-center">
-              <div class="bg-red-700 text-white px-2.5 py-1 rounded-lg shadow-md num-garaje">${contadores.garages}</div>
-              <h3>Puerta de Garaje ${contadores.garages}</h3>
+              <div class="bg-red-600 text-white px-2.5 py-1 rounded-lg shadow-md num-garaje">${contadores.garages}</div>
+              <h3 class="text-lg md:text-xl lg:text-xl">Puerta de Garaje ${contadores.garages}</h3>
             </div>
             <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
           </div>
 
           <div class="flex gap-4 justify-between items-center">
             <div class="flex flex-col flex-1">
-              <label class="text-gray-600">Ancho (cm)</label>
+              <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
               <input 
                 type="number" 
                 name="garajes_ancho[]" 
-                class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" 
+                class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
                 placeholder="250" 
                 required 
                 min="100" 
@@ -97,11 +97,11 @@ function crearElemento(elemento, contenedor) {
             </div>
 
             <div class="flex flex-col flex-1">
-              <label class="text-gray-600">Alto (cm)</label>
+              <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
               <input 
                 type="number" 
                 name="garajes_alto[]" 
-                class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" 
+                class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
                 placeholder="200" 
                 required 
                 min="150" 
@@ -112,10 +112,10 @@ function crearElemento(elemento, contenedor) {
 
           </div>
             <div class="flex flex-col ">
-              <label class="text-gray-600">Automática</label>
+              <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Automática</label>
               <select 
                 name="garajes_automatica[]" 
-                class="border bg-gray-100 border-gray-300 p-2 rounded-lg text-gray-700 " 
+                class="border  border-gray-600 p-2 rounded-xs text-gray-700 " 
                 required>
                 <option value="">Selecciona una opción</option>
                 <option value="sí">Sí</option>
@@ -124,10 +124,10 @@ function crearElemento(elemento, contenedor) {
             </div>
 
           <div class="flex flex-col">
-            <label class="text-gray-600">Material</label>
+            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Material</label>
             <select 
               name="garajes_material[]" 
-              class="border bg-gray-100 border-gray-300 p-2 rounded-lg text-gray-700" 
+              class="border  border-gray-600 p-2 rounded-xs text-gray-700" 
               required
             >
               <option value="">Selecciona un tipo</option>
@@ -138,20 +138,20 @@ function crearElemento(elemento, contenedor) {
           </div>
 
           <div class="flex flex-col">
-            <label class="text-gray-600">Observaciones</label>
+            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Observaciones</label>
             <textarea 
               name="garajes_observaciones[]" 
-              class="border border-gray-300 bg-gray-100 p-2 rounded-lg" 
+              class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
               placeholder="Detalles adicionales (opcional)" 
               maxlength="200"
             ></textarea>
           </div>
 
           <div class="flex flex-col">
-            <h3>Fotos</h3>
+            <h3 class="text-gray-600 text-lg md:text-xl lg:text-xl">Fotos</h3>
             <label for="garajes-fotos${contadores.garages}" 
-              class="text-gray-600 w-full bg-gray-100 py-5 px-4
-                    border-dashed border-2 border-gray-300 rounded-lg text-center cursor-pointer
+              class="text-gray-600 w-full  py-5 px-4
+                    border-dashed border-3 border-gray-600 rounded-xs text-center cursor-pointer
                     hover:border-red-700 hover:text-red-700">
               <i class="fa-solid fa-upload"></i> Subir fotos (mínimo 2)
             </label>
@@ -174,22 +174,22 @@ function crearElemento(elemento, contenedor) {
       case 'ventana':
         contadores.ventanas++;
        contenedor.insertAdjacentHTML("beforeend", `
-      <div class="ventana flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-lg w-full h-auto bg-gray-50 shadow-md">
+      <div class="ventana flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-xs w-full h-auto bg-gray-50 shadow-xl border-l-3 border-black">
         <div class="flex gap-4 items-center justify-between">
           <div class="flex gap-4 items-center">
-            <div class="bg-red-700 text-white px-2.5 py-1 rounded-lg shadow-md num-ventana">${contadores.ventanas}</div>
-            <h3>Ventana ${contadores.ventanas}</h3>
+            <div class="bg-red-600 text-white px-2.5 py-1 rounded-lg shadow-md num-ventana">${contadores.ventanas}</div>
+            <h3 class="text-lg md:text-xl lg:text-xl">Ventana ${contadores.ventanas}</h3>
           </div>
           <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
         </div>
 
         <div class="flex gap-4 justify-between items-center">
-          <div class="flex flex-col">
-            <label class="text-gray-600">Ancho (cm)</label>
+          <div class="flex flex-col flex-1">
+            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
             <input 
               type="number" 
               name="ventanas_ancho[]" 
-              class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" 
+              class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
               placeholder="120" 
               required 
               min="30" 
@@ -198,12 +198,12 @@ function crearElemento(elemento, contenedor) {
             >
           </div>
 
-          <div class="flex flex-col">
-            <label class="text-gray-600">Alto (cm)</label>
+          <div class="flex flex-col flex-1">
+            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
             <input 
               type="number" 
               name="ventanas_alto[]" 
-              class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" 
+              class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
               placeholder="100" 
               required 
               min="30" 
@@ -211,13 +211,13 @@ function crearElemento(elemento, contenedor) {
               step="1"
             >
           </div>
-
-          <div class="flex flex-col">
-            <label class="text-gray-600">Distancia del suelo al umbral (cm)</label>
+        </div>
+        <div class="flex flex-col">
+            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Distancia desde suelo (cm)</label>
             <input 
               type="number" 
               name="ventanas_distancia_umbral[]" 
-              class="border border-gray-300 bg-gray-100 p-2 rounded-lg w-full" 
+              class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
               placeholder="90" 
               required 
               min="0" 
@@ -225,13 +225,12 @@ function crearElemento(elemento, contenedor) {
               step="1"
             >
           </div>
-        </div>
 
         <div class="flex flex-col">
-          <label class="text-gray-600">Tipo de apertura</label>
+          <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Tipo de apertura</label>
           <select 
             name="ventanas_apertura[]" 
-            class="border bg-gray-100 border-gray-300 p-2 rounded-lg text-gray-700" 
+            class="border  border-gray-600 p-2 rounded-xs text-gray-700" 
             required
           >
             <option value="">Selecciona un tipo</option>
@@ -243,10 +242,10 @@ function crearElemento(elemento, contenedor) {
         </div>
 
         <div class="flex flex-col">
-          <label class="text-gray-600">Material</label>
+          <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Material</label>
           <select 
             name="ventanas_material[]" 
-            class="border bg-gray-100 border-gray-300 p-2 rounded-lg text-gray-700" 
+            class="border border-gray-600 p-2 rounded-xs text-gray-700" 
             required
           >
             <option value="">Selecciona un tipo</option>
@@ -257,20 +256,20 @@ function crearElemento(elemento, contenedor) {
         </div>
 
         <div class="flex flex-col">
-          <label class="text-gray-600">Observaciones</label>
+          <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Observaciones</label>
           <textarea 
             name="ventanas_observaciones[]" 
-            class="border border-gray-300 bg-gray-100 p-2 rounded-lg" 
+            class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
             placeholder="Detalles adicionales (opcional)" 
             maxlength="200"
           ></textarea>
         </div>
 
         <div class="caja_fotos flex flex-col">
-          <h3>Fotos</h3>
+          <h3 class="text-gray-600 text-lg md:text-xl lg:text-xl">Fotos</h3>
           <label for="ventanas-fotos${contadores.ventanas}" 
-            class="text-gray-600 w-full bg-gray-100 py-5 px-4
-                  border-dashed border-2 border-gray-300 rounded-lg text-center cursor-pointer
+            class="text-gray-600 w-full  py-5 px-4
+                  border-dashed border-3 border-gray-600 rounded-xs text-center cursor-pointer
                   hover:border-red-700 hover:text-red-700">
             <i class="fa-solid fa-upload"></i> Subir fotos (mínimo 2)
           </label>

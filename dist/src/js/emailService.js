@@ -113,14 +113,14 @@ function prepararDatosParaEmail(urlsFotos) {
     // --- 2. Puertas ---
     const puertas = document.querySelectorAll('.puerta');
     if (puertas.length > 0) {
-        cuerpoEmail += `<h3>Puertas (${puertas.length})</h3>`;
+        cuerpoEmail += `<h3>Puertas :</h3>`;
         puertas.forEach((puerta, index) => {
             const inputId = puerta.querySelector('input[type="file"]').id;
             const urlsDeEstaPuerta = urlsFotos[inputId] || [];
             
             cuerpoEmail += `
                 <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
-                    <strong>Puerta </strong>
+                    <strong>Puerta ${index + 1}</strong>
                     <ul>
                         <li>Ancho: ${puerta.querySelector('input[name="puertas-ancho[]"]').value} cm</li>
                         <li>Fondo: ${puerta.querySelector('input[name="puertas-fondo[]"]').value} cm</li>
@@ -143,14 +143,14 @@ function prepararDatosParaEmail(urlsFotos) {
     // --- 3. Garajes ---
     const garajes = document.querySelectorAll('.garaje');
     if (garajes.length > 0) {
-        cuerpoEmail += `<h3>Garajes (${garajes.length})</h3>`;
+        cuerpoEmail += `<h3>Garajes :</h3>`;
         garajes.forEach((garaje, index) => {
             const inputId = garaje.querySelector('input[type="file"]').id;
             const urlsDeEsteGaraje = urlsFotos[inputId] || [];
 
             cuerpoEmail += `
                 <div style="border:1px solid #ccc;padding:10px;margin-bottom:10px;">
-                    <strong>Garaje</strong>
+                    <strong>Garaje ${index + 1}</strong>
                     <ul>
                         <li>Ancho: ${garaje.querySelector('input[name="garajes_ancho[]"]').value} cm</li>
                         <li>Alto: ${garaje.querySelector('input[name="garajes_alto[]"]').value} cm</li>
@@ -173,14 +173,14 @@ function prepararDatosParaEmail(urlsFotos) {
     // --- 4. Ventanas ---
     const ventanas = document.querySelectorAll('.ventana');
     if (ventanas.length > 0) {
-        cuerpoEmail += `<h3>Ventanas (${ventanas.length})</h3>`;
+        cuerpoEmail += `<h3>Ventanas :</h3>`;
         ventanas.forEach((ventana, index) => {
             const inputId = ventana.querySelector('input[type="file"]').id;
             const urlsDeEstaVentana = urlsFotos[inputId] || [];
 
             cuerpoEmail += `
                 <div style="border:1px solid #ccc;padding:10px;margin-bottom:10px;">
-                    <strong>Ventana </strong>
+                    <strong>Ventana ${index + 1}</strong>
                     <ul>
                         <li>Ancho: ${ventana.querySelector('input[name="ventanas_ancho[]"]').value} cm</li>
                         <li>Alto: ${ventana.querySelector('input[name="ventanas_alto[]"]').value} cm</li>
