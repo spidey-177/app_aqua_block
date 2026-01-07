@@ -22,7 +22,13 @@ export function initFormSubmit() {
         const ventanas = document.querySelectorAll('.ventana');
 
         if (puertas.length === 0 && garajes.length === 0 && ventanas.length === 0) {
-            alert('¡Espera! Debes añadir al menos una puerta, garaje o ventana antes de enviar.');
+                Swal.fire({
+                title: '¡Espera!',
+                text: 'Debes añadir al menos una puerta, garaje o ventana antes de enviar.',
+                icon: 'info', // o 'error', 'warning', 'info'
+                confirmButtonColor: '#E60012', // Rojo AquaBlock
+                confirmButtonText: 'Botón Aceptar'
+                });
             // Llevamos al usuario a la pantalla de selección para que añada algo
             mostrarPantalla(pantallas, document.getElementById('pantalla-selection-typeform'));
             return; // Frena el envío
@@ -50,12 +56,14 @@ export function initFormSubmit() {
         // 5. La comprobación final se hace AFUERA,
         //    usando nuestra variable "memoria".
         if (!formCompletoEsValido) {
-             alert('Revisa el formulario, faltan datos obligatorios.');
+                Swal.fire({
+                icon: 'warning',
+                title: '¡Faltan datos!',
+                text: 'Por favor, rellena los campos obligatorios.',
+                confirmButtonColor: '#E60012', // Rojo AquaBlock
+                confirmButtonText: 'Entendido'
+                });
             mostrarPantalla(pantallas, pantallaError);
-            
-            // --- ¡AÑADE ESTA LÍNEA! ---
-            revisarForm(pantallaError, true, true);
-            // ------------------------------------
 
              return; // Cortamos el flujo
         }

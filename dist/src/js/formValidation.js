@@ -32,9 +32,12 @@ const inputs_fotos = pantalla.querySelectorAll('input[type="file"]');
       if (showError) {
              // Muestra el conteo correcto desde el 'almacén'
         const fileCount = stagedFiles[inputId] ? stagedFiles[inputId].length : 0;
-        alert(
-          `Debes subir al menos 2 fotos para cada elemento 📸 (Tienes ${fileCount})`
-        );
+        Swal.fire({
+          title: 'Faltan fotos',
+          text: 'Debes subir al menos 2 fotos...',
+          icon: 'info', // o 'error', 'warning', 'info'
+          confirmButtonText: 'Botón Aceptar'
+        });
 
         input_foto.previousElementSibling.scrollIntoView({
           behavior: "smooth",

@@ -11,3 +11,29 @@
           hover:scale-95 hover:contrast-125 transition-all duration-200 w-full cursor-pointer
         rounded-xs;
 }
+body {
+    background-color: #f9fafb;
+    background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ba00008d; 
+    border-radius: 20px;
+    border: 3px solid transparent; 
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #E60012; 
+}

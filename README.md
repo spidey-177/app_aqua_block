@@ -1,4 +1,4 @@
-# 🌊 AQUABLOCK — Formulario dinámico multipaso
+#  AQUABLOCK — Formulario dinámico multipaso
 
 Este proyecto es una **aplicación web desarrollada para la empresa AquaBlock**, destinada a recopilar de forma estructurada las medidas y características de puertas automáticas o de garaje enviadas por los clientes.
 
@@ -6,7 +6,7 @@ El formulario está diseñado con un enfoque **modular, responsive y animado**, 
 
 ---
 
-## 🚀 Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 - **HTML5**
 - **CSS3 / TailwindCSS**
@@ -39,15 +39,15 @@ app_aquablock/
 
 ## ⚙️ Funcionalidades principales
 
-- 🧭 **Formulario multipaso dinámico** con transiciones animadas entre pantallas.  
-- 📧 **Integración con EmailJS** para el envío de datos directamente por correo.  
-- ✅ **Validaciones en tiempo real** en los campos del formulario.  
-- 🎨 **Estilos con TailwindCSS**, generados en `dist/output.css`.  
-- 📱 **Diseño responsive** adaptable a cualquier dispositivo.  
+-  **Formulario multipaso dinámico** con transiciones animadas entre pantallas.  
+-  **Integración con EmailJS** para el envío de datos directamente por correo.  
+-  **Validaciones en tiempo real** en los campos del formulario.  
+-  **Estilos con TailwindCSS**, generados en `dist/output.css`.  
+-  **Diseño responsive** adaptable a cualquier dispositivo.  
 
 ---
 
-## 🧠 Modo de uso en local
+##  Modo de uso en local
 
 1. Clona el repositorio:
    ```bash
@@ -57,4 +57,5 @@ José Fernando Calizaya Cruz
 Desarrollador Web Junior
 📧 fernandocalizayacruz@gmail.com
 
-🌍 Barcelona, España
+ Barcelona, España 
+ fu fu -- aun estoy trabajando!!

@@ -10,42 +10,47 @@ const contadores = {
     ventanas: 0
 };
 export const stagedFiles = {};
-
+//window.misArchivos = stagedFiles; // <--- AÑADE ESTO TEMPORALMENTE
 function crearElemento(elemento, contenedor) {
+  const uniqueID = Date.now().toString() + Math.floor(Math.random() * 1000);
 
     switch (elemento) {
       case 'puerta':
         contadores.puertas++;
          contenedor.insertAdjacentHTML("beforeend", `
-            <div class="puerta flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-xs w-full h-auto bg-gray-50 shadow-xl border-l-3 border-black">
+            <div class="puerta flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-sm w-full h-auto bg-gray-50 shadow-xl border-2 border-gray-400">
               <div class="flex gap-4 items-center justify-between">
                 <div class="flex gap-4 items-center">
-                  <div class="bg-red-600 text-white px-2.5 py-1 rounded-lg shadow-md num-puerta">${contadores.puertas}</div>
+                  <div class="bg-red-600 text-white px-2.5 py-1 rounded-sm shadow-md num-puerta">${contadores.puertas}</div>
                   <h3 class="text-lg md:text-xl lg:text-xl">Puerta ${contadores.puertas}</h3>
                 </div>
-                <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
+                <i class="fa-solid fa-x text-gray-500 cursor-pointer"></i>
               </div>
 
               <div class="flex gap-2 justify-between items-center">
                 <div class="flex flex-col flex-1">
-                  <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
-                  <input type="number" name="puertas-ancho[]" class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" placeholder="80" required min="40" max="150" step="1">
+                  <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
+                  <input type="number" name="puertas-ancho[]" class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+                    focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="80" required min="40" max="150" step="1">
                 </div>
 
                 <div class="flex flex-col flex-1">
-                  <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Fondo (cm)</label>
-                  <input type="number" name="puertas-fondo[]" class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" placeholder="90" min="0" max="150" step="1">
+                  <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Fondo (cm)</label>
+                  <input type="number" name="puertas-fondo[]" class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+                  focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="90" min="0" max="150" step="1">
                 </div>
 
                 <div class="flex flex-col flex-1">
-                  <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
-                  <input type="number" name="puertas-alto[]" class="border  border-gray-600 shadow-sm p-2 rounded-xs w-full" placeholder="200" required min="150" max="300" step="1">
+                  <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
+                  <input type="number" name="puertas-alto[]" class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+                  focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="200" required min="150" max="300" step="1">
                 </div>
               </div>
 
               <div class="flex flex-col">
-                <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Tipo de Puerta</label>
-                <select name="puertas-material[]" class="border  border-gray-600 shadow-sm p-2 rounded-xs w-full" required>
+                <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Tipo de Puerta</label>
+                <select name="puertas-material[]" class="border text-gray-400 border-gray-400 shadow-sm p-2 rounded-sm w-full
+                 focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" required>
                   <option value="">Selecciona un tipo</option>
                   <option value="madera">Madera</option>
                   <option value="metal">Metal</option>
@@ -54,16 +59,17 @@ function crearElemento(elemento, contenedor) {
               </div>
 
               <div class="flex flex-col text-lg md:text-xl lg:text-xl">
-                <label class="text-gray-600">Observaciones</label>
-                <textarea name="puertas-observaciones[]" class="border  border-gray-600 shadow-sm p-2 rounded-xs w-full" placeholder="Detalles adicionales (opcional)" maxlength="200"></textarea>
+                <label class="text-gray-800">Observaciones</label>
+                <textarea name="puertas-observaciones[]" class="border  border-gray-400 shadow-sm p-2 rounded-sm w-full
+                 focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="Detalles adicionales (opcional)" maxlength="200"></textarea>
               </div>
 
               <div class="flex flex-col">
-                <h3>Fotos</h3>
-                <label id="label-puertas-fotos${contadores.puertas}" for="puertas-fotos${contadores.puertas}" class="text-gray-600 w-full  py-5 px-4 border-dashed border-3 border-gray-600 rounded-xs text-center cursor-pointer hover:border-red-700 hover:text-red-700">
+                <h3 class="text-gray-800 text-lg md:text-xl lg:text-xl">Fotos</h3>
+                <label id="label-puertas-fotos${uniqueID}" for="puertas-fotos${uniqueID}" class="text-gray-600 w-full  py-5 px-4 border-dashed border-3 border-gray-600 rounded-sm text-center cursor-pointer hover:border-red-700 hover:text-red-700">
                   <i class="fa-solid fa-upload"></i> Subir fotos (mínimo 2)
                 </label>
-                <input type="file" accept="image/*" id="puertas-fotos${contadores.puertas}" name="puertas-fotos[]" capture="environment" class="border border-gray-300 bg-gray-100 p-2 rounded-lg" multiple hidden>
+                <input type="file" accept="image/*" id="puertas-fotos${uniqueID}" name="puertas-fotos[]" capture="environment" class="border border-gray-300 bg-gray-100 p-2 rounded-lg" multiple hidden>
                 <div class="file-preview-container mt-2 flex flex-col gap-1"></div>
               </div>
             </div>
@@ -72,10 +78,10 @@ function crearElemento(elemento, contenedor) {
       case 'garage':
         contadores.garages++;
         contenedor.insertAdjacentHTML("beforeend", `
-            <div class="garaje flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-xs w-full h-auto bg-gray-50 shadow-xl border-l-3 border-black">
+            <div class="garaje flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-sm w-full h-auto bg-gray-50 shadow-xl border-2 border-gray-400">
           <div class="flex gap-4 items-center justify-between">
             <div class="flex gap-4 items-center">
-              <div class="bg-red-600 text-white px-2.5 py-1 rounded-lg shadow-md num-garaje">${contadores.garages}</div>
+              <div class="bg-red-600 text-white px-2.5 py-1 rounded-sm shadow-md num-garaje">${contadores.garages}</div>
               <h3 class="text-lg md:text-xl lg:text-xl">Puerta de Garaje ${contadores.garages}</h3>
             </div>
             <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
@@ -83,11 +89,12 @@ function crearElemento(elemento, contenedor) {
 
           <div class="flex gap-4 justify-between items-center">
             <div class="flex flex-col flex-1">
-              <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
+              <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
               <input 
                 type="number" 
                 name="garajes_ancho[]" 
-                class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
+                class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+                focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
                 placeholder="250" 
                 required 
                 min="100" 
@@ -97,11 +104,12 @@ function crearElemento(elemento, contenedor) {
             </div>
 
             <div class="flex flex-col flex-1">
-              <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
+              <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
               <input 
                 type="number" 
                 name="garajes_alto[]" 
-                class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
+                class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+                focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
                 placeholder="200" 
                 required 
                 min="150" 
@@ -112,10 +120,11 @@ function crearElemento(elemento, contenedor) {
 
           </div>
             <div class="flex flex-col ">
-              <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Automática</label>
+              <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Automática</label>
               <select 
                 name="garajes_automatica[]" 
-                class="border  border-gray-600 p-2 rounded-xs text-gray-700 " 
+                class="border text-gray-400 border-gray-400 p-2 rounded-sm 
+                focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
                 required>
                 <option value="">Selecciona una opción</option>
                 <option value="sí">Sí</option>
@@ -124,10 +133,11 @@ function crearElemento(elemento, contenedor) {
             </div>
 
           <div class="flex flex-col">
-            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Material</label>
+            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Material</label>
             <select 
               name="garajes_material[]" 
-              class="border  border-gray-600 p-2 rounded-xs text-gray-700" 
+              class="border  border-gray-400 p-2 rounded-sm text-gray-400
+              focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
               required
             >
               <option value="">Selecciona un tipo</option>
@@ -138,27 +148,28 @@ function crearElemento(elemento, contenedor) {
           </div>
 
           <div class="flex flex-col">
-            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Observaciones</label>
+            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Observaciones</label>
             <textarea 
               name="garajes_observaciones[]" 
-              class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
+              class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+              focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
               placeholder="Detalles adicionales (opcional)" 
               maxlength="200"
             ></textarea>
           </div>
 
           <div class="flex flex-col">
-            <h3 class="text-gray-600 text-lg md:text-xl lg:text-xl">Fotos</h3>
-            <label for="garajes-fotos${contadores.garages}" 
+            <h3 class="text-gray-800 text-lg md:text-xl lg:text-xl">Fotos</h3>
+            <label for="garajes-fotos${uniqueID}" 
               class="text-gray-600 w-full  py-5 px-4
-                    border-dashed border-3 border-gray-600 rounded-xs text-center cursor-pointer
+                    border-dashed border-3 border-gray-600 rounded-sm text-center cursor-pointer
                     hover:border-red-700 hover:text-red-700">
               <i class="fa-solid fa-upload"></i> Subir fotos (mínimo 2)
             </label>
             <input 
               type="file" 
               accept="image/*" 
-              id="garajes-fotos${contadores.garages}" 
+              id="garajes-fotos${uniqueID}" 
               name="garajes-fotos[]" 
               capture="environment" 
               class="border border-gray-300 bg-gray-100 p-2 rounded-lg" 
@@ -174,10 +185,10 @@ function crearElemento(elemento, contenedor) {
       case 'ventana':
         contadores.ventanas++;
        contenedor.insertAdjacentHTML("beforeend", `
-      <div class="ventana flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-xs w-full h-auto bg-gray-50 shadow-xl border-l-3 border-black">
+      <div class="ventana flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-sm w-full h-auto bg-gray-50 shadow-xl border-2 border-gray-400">
         <div class="flex gap-4 items-center justify-between">
           <div class="flex gap-4 items-center">
-            <div class="bg-red-600 text-white px-2.5 py-1 rounded-lg shadow-md num-ventana">${contadores.ventanas}</div>
+            <div class="bg-red-600 text-white px-2.5 py-1 rounded-sm shadow-md num-ventana">${contadores.ventanas}</div>
             <h3 class="text-lg md:text-xl lg:text-xl">Ventana ${contadores.ventanas}</h3>
           </div>
           <i class="fa-solid fa-x text-gray-400 cursor-pointer"></i>
@@ -185,11 +196,12 @@ function crearElemento(elemento, contenedor) {
 
         <div class="flex gap-4 justify-between items-center">
           <div class="flex flex-col flex-1">
-            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
+            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
             <input 
               type="number" 
               name="ventanas_ancho[]" 
-              class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
+              class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+              focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
               placeholder="120" 
               required 
               min="30" 
@@ -199,11 +211,12 @@ function crearElemento(elemento, contenedor) {
           </div>
 
           <div class="flex flex-col flex-1">
-            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
+            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
             <input 
               type="number" 
               name="ventanas_alto[]" 
-              class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
+              class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+              focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
               placeholder="100" 
               required 
               min="30" 
@@ -213,11 +226,12 @@ function crearElemento(elemento, contenedor) {
           </div>
         </div>
         <div class="flex flex-col">
-            <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Distancia desde suelo (cm)</label>
+            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Distancia desde suelo (cm)</label>
             <input 
               type="number" 
               name="ventanas_distancia_umbral[]" 
-              class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
+              class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+              focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
               placeholder="90" 
               required 
               min="0" 
@@ -227,10 +241,11 @@ function crearElemento(elemento, contenedor) {
           </div>
 
         <div class="flex flex-col">
-          <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Tipo de apertura</label>
+          <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Tipo de apertura</label>
           <select 
             name="ventanas_apertura[]" 
-            class="border  border-gray-600 p-2 rounded-xs text-gray-700" 
+            class="border  border-gray-400 p-2 rounded-sm text-gray-400
+            focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
             required
           >
             <option value="">Selecciona un tipo</option>
@@ -242,10 +257,11 @@ function crearElemento(elemento, contenedor) {
         </div>
 
         <div class="flex flex-col">
-          <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Material</label>
+          <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Material</label>
           <select 
             name="ventanas_material[]" 
-            class="border border-gray-600 p-2 rounded-xs text-gray-700" 
+            class="border border-gray-400 text-gray-400 p-2 rounded-sm 
+            focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
             required
           >
             <option value="">Selecciona un tipo</option>
@@ -256,27 +272,28 @@ function crearElemento(elemento, contenedor) {
         </div>
 
         <div class="flex flex-col">
-          <label class="text-gray-600 text-lg md:text-xl lg:text-xl">Observaciones</label>
+          <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Observaciones</label>
           <textarea 
             name="ventanas_observaciones[]" 
-            class="border border-gray-600 shadow-sm p-2 rounded-xs w-full" 
+            class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
+            focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
             placeholder="Detalles adicionales (opcional)" 
             maxlength="200"
           ></textarea>
         </div>
 
         <div class="caja_fotos flex flex-col">
-          <h3 class="text-gray-600 text-lg md:text-xl lg:text-xl">Fotos</h3>
-          <label for="ventanas-fotos${contadores.ventanas}" 
+          <h3 class="text-gray-800 text-lg md:text-xl lg:text-xl">Fotos</h3>
+          <label for="ventanas-fotos${uniqueID}" 
             class="text-gray-600 w-full  py-5 px-4
-                  border-dashed border-3 border-gray-600 rounded-xs text-center cursor-pointer
+                  border-dashed border-3 border-gray-600 rounded-sm text-center cursor-pointer
                   hover:border-red-700 hover:text-red-700">
             <i class="fa-solid fa-upload"></i> Subir fotos (mínimo 2)
           </label>
           <input 
             type="file" 
             accept="image/*" 
-            id="ventanas-fotos${contadores.ventanas}" 
+            id="ventanas-fotos${uniqueID}" 
             name="ventanas_fotos[]" 
             capture="environment" 
             class="border border-gray-300 bg-gray-100 p-2 rounded-lg" 
@@ -301,24 +318,20 @@ function crearElemento(elemento, contenedor) {
 function actualizarNumeracion(contenedor, tipo) {
     let selector = '';
     let num_selector = '';
-    let id_prefix = '';
     let titulo_prefix = '';
 
     // Configura las variables según el tipo de elemento
     if (tipo === 'puerta') {
         selector = '.puerta';
         num_selector = '.num-puerta';
-        id_prefix = 'puertas-fotos';
         titulo_prefix = 'Puerta ';
     } else if (tipo === 'garage') {
         selector = '.garaje';
         num_selector = '.num-garaje';
-        id_prefix = 'garajes_fotos';
         titulo_prefix = 'Puerta de Garaje ';
     } else if (tipo === 'ventana') {
         selector = '.ventana';
         num_selector = '.num-ventana';
-        id_prefix = 'ventanas_fotos';
         titulo_prefix = 'Ventana ';
     }
 
@@ -335,13 +348,6 @@ function actualizarNumeracion(contenedor, tipo) {
         // Actualiza el título
         elemento.querySelector('h3').textContent = titulo_prefix + nuevoNumero;
 
-        // Actualiza el 'for' del label de las fotos
-        const label = elemento.querySelector(`label[for^="${id_prefix}"]`);
-        if (label) label.setAttribute('for', id_prefix + nuevoNumero);
-
-        // Actualiza el 'id' del input de las fotos
-        const input = elemento.querySelector(`input[id^="${id_prefix}"]`);
-        if (input) input.setAttribute('id', id_prefix + nuevoNumero);
     });
 
     // 3. Actualiza el contador global al número más alto actual
@@ -382,6 +388,15 @@ export function initDynamicForms() {
                 const elementoEliminado = e.target.closest('.puerta, .garaje, .ventana');
                 // ... etc ...
                 if (elementoEliminado) {
+                  // --- NUEVO: BORRAR FOTOS DE LA MEMORIA ---
+                  // Buscamos el input de archivo dentro del elemento que vamos a borrar
+                  const inputDeFotos = elementoEliminado.querySelector('input[type="file"]');
+                  if (inputDeFotos && inputDeFotos.id) {
+                      // ¡Adiós fotos! Liberamos la memoria
+                      delete stagedFiles[inputDeFotos.id];
+                      console.log(`Fotos borradas del ID: ${inputDeFotos.id}`);
+                    }
+                    // -----------------------------------------
                     let tipo = '';
                     if (elementoEliminado.classList.contains('puerta')) tipo = 'puerta';
                     else if (elementoEliminado.classList.contains('garaje')) tipo = 'garage';
@@ -428,7 +443,13 @@ contenedores_form.forEach(contenedor => {
             // 2. Convierte el FileList (que no es un array) en un Array real
             const nuevosArchivos = Array.from(inputDeArchivo.files);
             if (stagedFiles[inputId].length + nuevosArchivos.length>2) {
-              alert('¡Límite alcanzado! Solo puedes subir un máximo de 2 fotos por elemento.');
+              Swal.fire({
+              icon: 'error',
+              title: '¡Solo puedes subir 2 fotos!',
+              text: 'Por favor recuerdalo!.',
+              confirmButtonColor: '#E60012', // Rojo AquaBlock
+              confirmButtonText: 'Entendido'
+            });
               // Limpiamos el input para que el usuario pueda intentarlo de nuevo
               inputDeArchivo.value = ''; 
               return; // <-- ¡Esto CORTA EL FLUJO! La función se detiene aquí.
