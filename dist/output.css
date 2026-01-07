@@ -1015,13 +1015,6 @@
     }
   }
 }
-body {
-  background-color: #f9fafb;
-  background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
-  background-size: 24px 24px;
-  background-attachment: fixed;
-  min-height: 100vh;
-}
 ::-webkit-scrollbar {
   width: 10px;
 }

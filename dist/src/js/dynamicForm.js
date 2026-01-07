@@ -18,7 +18,7 @@ function crearElemento(elemento, contenedor) {
       case 'puerta':
         contadores.puertas++;
          contenedor.insertAdjacentHTML("beforeend", `
-            <div class="puerta flex flex-col justify-evenly gap-4 mt-4 p-4 rounded-sm w-full h-auto bg-gray-50 shadow-xl border-2 border-gray-400">
+            <div class="puerta flex flex-col justify-evenly gap-4 mt-4 p-2 rounded-sm w-full h-auto bg-gray-50 shadow-xl border-2 border-gray-400">
               <div class="flex gap-4 items-center justify-between">
                 <div class="flex gap-4 items-center">
                   <div class="bg-red-600 text-white px-2.5 py-1 rounded-sm shadow-md num-puerta">${contadores.puertas}</div>
@@ -29,21 +29,21 @@ function crearElemento(elemento, contenedor) {
 
               <div class="flex gap-2 justify-between items-center">
                 <div class="flex flex-col flex-1">
-                  <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
+                  <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Ancho </label>
                   <input type="number" name="puertas-ancho[]" class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
-                    focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="80" required min="40" max="150" step="1">
+                    focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="80 (cm)" required min="40" max="150" step="1">
                 </div>
 
                 <div class="flex flex-col flex-1">
-                  <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Fondo (cm)</label>
+                  <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Fondo </label>
                   <input type="number" name="puertas-fondo[]" class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
-                  focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="90" min="0" max="150" step="1">
+                  focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="90 (cm)" min="0" max="150" step="1">
                 </div>
 
                 <div class="flex flex-col flex-1">
-                  <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
+                  <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Alto </label>
                   <input type="number" name="puertas-alto[]" class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
-                  focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="200" required min="150" max="300" step="1">
+                  focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" placeholder="200 (cm)" required min="150" max="300" step="1">
                 </div>
               </div>
 
@@ -89,13 +89,13 @@ function crearElemento(elemento, contenedor) {
 
           <div class="flex gap-4 justify-between items-center">
             <div class="flex flex-col flex-1">
-              <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
+              <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Ancho </label>
               <input 
                 type="number" 
                 name="garajes_ancho[]" 
                 class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
                 focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
-                placeholder="250" 
+                placeholder="250 (cm)" 
                 required 
                 min="100" 
                 max="500" 
@@ -104,13 +104,13 @@ function crearElemento(elemento, contenedor) {
             </div>
 
             <div class="flex flex-col flex-1">
-              <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
+              <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Alto </label>
               <input 
                 type="number" 
                 name="garajes_alto[]" 
                 class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
                 focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
-                placeholder="200" 
+                placeholder="200 (cm)" 
                 required 
                 min="150" 
                 max="400" 
@@ -196,13 +196,13 @@ function crearElemento(elemento, contenedor) {
 
         <div class="flex gap-4 justify-between items-center">
           <div class="flex flex-col flex-1">
-            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Ancho (cm)</label>
+            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Ancho </label>
             <input 
               type="number" 
               name="ventanas_ancho[]" 
               class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
               focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
-              placeholder="120" 
+              placeholder="120 (cm)" 
               required 
               min="30" 
               max="300" 
@@ -211,13 +211,13 @@ function crearElemento(elemento, contenedor) {
           </div>
 
           <div class="flex flex-col flex-1">
-            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Alto (cm)</label>
+            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Alto</label>
             <input 
               type="number" 
               name="ventanas_alto[]" 
               class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
               focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
-              placeholder="100" 
+              placeholder="100 (cm)" 
               required 
               min="30" 
               max="250" 
@@ -226,13 +226,13 @@ function crearElemento(elemento, contenedor) {
           </div>
         </div>
         <div class="flex flex-col">
-            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Distancia desde suelo (cm)</label>
+            <label class="text-gray-800 text-lg md:text-xl lg:text-xl">Distancia desde suelo </label>
             <input 
               type="number" 
               name="ventanas_distancia_umbral[]" 
               class="border border-gray-400 shadow-sm p-2 rounded-sm w-full
               focus:outline-none focus:bg-white focus:border-red-400 focus:ring-4 focus:ring-red-50/50 transition-all" 
-              placeholder="90" 
+              placeholder="90 (cm)" 
               required 
               min="0" 
               max="250" 
